@@ -40,6 +40,7 @@ function UsersController(User, TokenService, $state, CurrentUser){
 
   // POSTS the new user to register to the API
   function register() {
+    console.log(self.user)
     User.register(self.user, handleLogin);
   }
 

@@ -1,32 +1,15 @@
 <h1>Projects</h1>
-<div class="pure-g">
-  <ul>
-    <li ng-repeat="project in projects.all" class="pure-u-1 pure-u-md-1-3 main-grid">
-      <img src="{{project.image}}">
-      <strong>{{ project.title }}</strong>
+<div class="pure-g" ng-repeat="project in projects.all">
+      <img src="{{project.imageLink}}">
+      {{ project.title }}
       <hr>
-      {{project.description}}
+      {{project.need}}
+      {{project.summary}}
+      {{project.themeName}}
     </li>
   </ul>
 </div>
 
-<form ng-submit="projects.add()" class="pure-form pure-form-aligned">
-  <legend>Add Project</legend>
-  <div class="pure-control-group">
-    <label for="user_id">Organisation</label>
-    <select name="user_id" id="user_id" ng-model="projects.project.user_id"> 
-      <option value="{{user._id}}" ng-repeat="user in projects.users" >
-        {{user.local.organisation}}
-      </option>
-    </select>
-  </div>
-  <div class="pure-control-group">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" ng-model="projects.project.title">
-  </div>
-  <div class="pure-controls">
-    <button type="submit" class="pure-button pure-button-primary">Register</button>
-  </div>
-</form>
+
 
 

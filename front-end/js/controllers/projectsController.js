@@ -10,10 +10,8 @@ function ProjectsController(Project, User, $http){
   self.users   = [];
   self.project = {}; 
 
-  // self.newProject = {};
-  // self.projects = Project.query();
 
-  self.consoleProject = function(){
+  self.getWebProject = function(){
     $http({
       method: 'GET',
       url: 'https://api.globalgiving.org/api/public/projectservice/countries/GB/projects/active?api_key=a310a8b0-2e3a-4c23-aedf-ec13bf0e00a3&nextProjectId=8992',
@@ -48,6 +46,7 @@ function ProjectsController(Project, User, $http){
 
   self.getProjects = function(){
     Project.query(function(data){
+      console.log(data)
       return self.all = data;
     })
   }
@@ -65,7 +64,7 @@ function ProjectsController(Project, User, $http){
     self.project = {};
   })
 }
-self.consoleProject();
+// self.getWebProject();
 self.getProjects();
 self.getUsers();
 
