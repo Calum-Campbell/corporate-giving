@@ -23,6 +23,11 @@ angular
         url: "/register",
         templateUrl: "register.html"
       })
+      .state('projects', {
+        url: "/projects",
+        templateUrl: "projects.html",
+        controller: "ProjectsController as projects"
+      })
 
     $urlRouterProvider.otherwise("/");
   }

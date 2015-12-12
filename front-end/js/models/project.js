@@ -5,6 +5,7 @@ angular
 Project.$inject = ['$resource', 'API']
 function Project($resource, API){
 
+
   return $resource(
     API+'/projects/:id', {id: '@id'},
     { 'get':       { method: 'GET' },
