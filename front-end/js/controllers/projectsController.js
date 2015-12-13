@@ -11,6 +11,28 @@ function ProjectsController(Project, User, $http){
   self.project = {}; 
 
 
+  self.getLoopProjects = function(projectId){
+    $http({
+      method: 'GET',
+      url: 'https://api.globalgiving.org/api/public/projectservice/countries/GB/projects/active?api_key=a310a8b0-2e3a-4c23-aedf-ec13bf0e00a3&nextProjectId='+projectId+'',
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(function(response){
+      console.log(response)
+      self.checkLoopProjects(response)
+  })
+}
+
+  self.checkLoopProjects = function(response){
+    if (response.data.projects.hasNext){
+      console.log("more to come")
+      self.getLoopProjects(response.data.projects.nextProjectId)
+    }else{
+      console.log("finished!")
+    }
+  }
+
   self.getWebProject = function(){
     $http({
       method: 'GET',
@@ -34,10 +56,8 @@ function ProjectsController(Project, User, $http){
       summary: projectData['summary'],
       imageLink: projectData['imageLink'],
     }
-    console.log(newProjectObject)
     var project = { project: newProjectObject }
     Project.save(project, function(data){
-      console.log(project)
      self.all.push(data);
      self.project = {};
    })
@@ -46,7 +66,6 @@ function ProjectsController(Project, User, $http){
 
   self.getProjects = function(){
     Project.query(function(data){
-      console.log(data)
       return self.all = data;
     })
   }
@@ -64,6 +83,7 @@ function ProjectsController(Project, User, $http){
     self.project = {};
   })
 }
+self.getLoopProjects(8992);
 // self.getWebProject();
 self.getProjects();
 self.getUsers();

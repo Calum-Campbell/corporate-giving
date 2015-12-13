@@ -1,13 +1,17 @@
 <h1>Projects</h1>
 <div class="pure-g" ng-repeat="project in projects.all">
-      <img src="{{project.imageLink}}">
-      {{ project.title }}
+  <div class="pure-u-1-4">
+    <img src="{{project.imageLink}}">
+  </div>
+  <div class="pure-u-3-4">
+    <ul>
+      <li>{{ project.title }}</li>
       <hr>
-      {{project.need}}
-      {{project.summary}}
-      {{project.themeName}}
-    </li>
-  </ul>
+      <li>{{project.need}}</li>
+      <li>{{project.summary}}</li>
+      <li>{{project.themeName}}</li>
+    </ul>
+  </div>
 </div>
 
 
