@@ -27,6 +27,12 @@ router.route('/users/:id/addproject')
 router.route('/users/:id/removeproject')
   .put(usersController.usersRemoveProject)
 
+router.route('/users/:id/addtheme')
+  .put(usersController.usersAddTheme)
+
+router.route('/users/:id/removetheme')
+  .put(usersController.usersRemoveTheme)
+
 router.route('/themes')
   .get(themesController.themesIndex)
   .post(themesController.themesCreate)
