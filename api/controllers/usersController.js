@@ -47,6 +47,7 @@ function usersAddProject(req, res){
   });
 }
 
+
 function usersRemoveProject(req, res){
   var userId = req.params.id;
   var projectId = req.body.projectId;

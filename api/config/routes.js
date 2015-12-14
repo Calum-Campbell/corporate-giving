@@ -3,6 +3,7 @@ var express = require('express'),
 
 var usersController = require('../controllers/usersController');
 var projectsController = require('../controllers/projectsController');
+var themesController = require('../controllers/themesController');
 var authenticationsController = require('../controllers/authenticationsController');
 
 router.post('/login', authenticationsController.login);
@@ -26,6 +27,9 @@ router.route('/users/:id/addproject')
 router.route('/users/:id/removeproject')
   .put(usersController.usersRemoveProject)
 
+router.route('/themes')
+  .get(themesController.themesIndex)
+  .post(themesController.themesCreate)
 
 router.route('/projects')
   .get(projectsController.projectsIndex)
