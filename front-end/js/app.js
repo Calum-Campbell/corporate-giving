@@ -28,6 +28,11 @@ angular
         templateUrl: "projects.html",
         controller: "ProjectsController as projects"
       })
+      .state('themes', {
+        url: "/themes",
+        templateUrl: "themes.html",
+        controller: "ThemesController as themes"
+      })
 
     $urlRouterProvider.otherwise("/");
   }
