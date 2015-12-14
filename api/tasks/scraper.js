@@ -3,13 +3,42 @@ var rp        = require("request-promise");
 var base_url  = "https://api.globalgiving.org"
 var path      = "/api/public/projectservice/all/projects/active"
 
+var themePath = "/api/public/projectservice/themes"
+
 var initialParams = {
   api_key: "a310a8b0-2e3a-4c23-aedf-ec13bf0e00a3",
 }
 
-var url = createUrl(base_url, path, initialParams);
+var Theme = require("../models/theme");
 
-scrape(url);
+var url = createUrl(base_url, path, initialParams);
+var themeUrl = createUrl(base_url, themePath, initialParams);
+
+// scrape(url);
+themeScrape(themeUrl);
+
+function themeScrape(Url) {
+  return rp({
+    method: "get",
+    url: url,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(function(res){
+    var themes = JSON.parse(res).themes;
+
+    themes.theme.forEach(function(theme){
+      var newTheme = new Theme(theme)
+      console.log(newTheme)
+      newTheme.save(Theme,function(err){
+       if (err) return res.status(500).json({message: "Something went wrong!"});
+       res.status(201).json({message: 'Theme successfully added.', theme: theme});
+     })
+    })
+  })
+}
+
+
 function scrape(url) {
   return rp({
     method: "get",
@@ -95,15 +124,15 @@ function scrape(url) {
 
     });
 
-    if (projects.hasNext) {
-      var newParams = initialParams;
-      initialParams.nextProjectId = projects.nextProjectId;
-      var url = createUrl(base_url, path, newParams);
-      return scrape(url);
-    } else {
-      return process.exit();
-    };
-  });
+if (projects.hasNext) {
+  var newParams = initialParams;
+  initialParams.nextProjectId = projects.nextProjectId;
+  var url = createUrl(base_url, path, newParams);
+  return scrape(url);
+} else {
+  return process.exit();
+};
+});
 };
 
 function createUrl(base_url, path, params){

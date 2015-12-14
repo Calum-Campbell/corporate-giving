@@ -9,7 +9,10 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
 
   self.all     = [];
   self.themes   = [];
+  self.user    = {};
   self.theme    = {};
+  self.userThemes = [];
+
 
   self.getWebThemeNames = function(){
     $http({
@@ -51,15 +54,27 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
     })
   }
 
+  self.getUser = function(){
+    self.user = TokenService.decodeToken();
+    User.get({id: self.user._id}, function(data){
+      // console.log(data.user)
+      self.user = data.user
+      self.userThemes = self.user.themes;
+    })
+  };
+
+  self.checkTheme = function(themeId){
+    return self.userThemes.indexOf(themeId) === -1 ? false : true;
+  }
+
   self.addThemeToUser = function(theme){
-    console.log("gui is a pussy")
     self.user = TokenService.decodeToken();
     var data = {
       themeId: theme._id
     }
-    console.log(data)
     User.addTheme({id: self.user._id}, data, function(user){
-      console.log(user);
+      self.userThemes.push(theme._id);
+      console.log(self.userThemes)
     });
   }
 
@@ -68,14 +83,14 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
     var data = {
       themeId: theme._id
     }
-    console.log(data)
     User.removeTheme({id: self.user._id}, data, function(user){
-      console.log(user);
+      var index = self.userThemes.indexOf(theme._id);
+      self.userThemes.splice(index, 1);
     });
   }
 
   self.getThemes();
   self.getUsers();
-// self.getWebThemeNames();
+  self.getUser();
 
 }

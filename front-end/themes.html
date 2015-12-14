@@ -4,8 +4,10 @@
   <div class="pure-u-1">
     <ul>
       <li>{{theme.name}}</li>
-      <button ng-click="themes.addThemeToUser(theme)">ADD</button>
-      <button ng-click="themes.removeThemeFromUser(theme)">remove</button>
+      <li>{{theme.id}}</li>
+      {{themes.checkTheme(theme._id)}}
+      <button ng-hide="themes.checkTheme(theme._id)" ng-click="themes.addThemeToUser(theme)">ADD</button>
+      <button ng-show="themes.checkThemes(theme._id)" ng-click="themes.removeThemeFromUser(theme)">remove</button>
     </ul>
   </div>
 </div>
