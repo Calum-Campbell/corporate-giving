@@ -2,9 +2,9 @@ angular
 .module('cause-app')
 .controller('ThemesController', ThemesController);
 
-ThemesController.$inject = ["Theme","$http"]
+ThemesController.$inject = ["Theme","$http", "User", "CurrentUser", 'TokenService']
 
-function ThemesController(Theme, $http){
+function ThemesController(Theme, $http, User, CurrentUser, TokenService){
   var self = this;
 
   self.all     = [];
@@ -39,12 +39,43 @@ function ThemesController(Theme, $http){
    })
   }
 
+  self.getUsers = function(){
+   User.query(function(data){
+    return self.users = data.users;
+  });
+  }
+
   self.getThemes = function(){
     Theme.query(function(data){
       return self.all = data;
     })
   }
+
+  self.addThemeToUser = function(theme){
+    console.log("gui is a pussy")
+    self.user = TokenService.decodeToken();
+    var data = {
+      themeId: theme._id
+    }
+    console.log(data)
+    User.addTheme({id: self.user._id}, data, function(user){
+      console.log(user);
+    });
+  }
+
+  self.removeThemeFromUser = function(theme){
+    self.user = TokenService.decodeToken();
+    var data = {
+      themeId: theme._id
+    }
+    console.log(data)
+    User.removeTheme({id: self.user._id}, data, function(user){
+      console.log(user);
+    });
+  }
+
   self.getThemes();
+  self.getUsers();
 // self.getWebThemeNames();
 
 }

@@ -21,6 +21,14 @@ function User($resource, API){
         url: API + '/users/:id/removeproject',
         method: 'PUT'
       },
+      'addTheme': { 
+        url: API + '/users/:id/addtheme',
+        method: 'PUT'
+      },
+      'removeTheme': { 
+        url: API + '/users/:id/removetheme',
+        method: 'PUT'
+      },
       'register': {
         url: API +'/register',
         method: "POST"
