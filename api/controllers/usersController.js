@@ -47,6 +47,23 @@ function usersAddProject(req, res){
   });
 }
 
+function usersRemoveProject(req, res){
+  var userId = req.params.id;
+  var projectId = req.body.projectId;
+  User.findOne({_id: userId}, function(err, user){
+    Project.findOne({_id: projectId}, function(err, project){
+      var projectIndex = user.projects.indexOf(project)
+      user.projects.splice(projectIndex,1);
+      user.save(function(err){
+        if (err) return res.status(500).json({message: "Something went wrong!"});
+
+        res.status(201).json({message: 'Project successfully removed.', user: user});
+      });
+
+    });
+  });
+}
+
 function usersDelete(req, res){
   User.findByIdAndRemove({_id: req.params.id}, function(err){
    if (err) return res.status(404).json({message: 'Something went wrong.'});
@@ -59,5 +76,6 @@ module.exports = {
   usersShow:   usersShow,
   usersUpdate: usersUpdate,
   usersAddProject: usersAddProject,
+  usersRemoveProject: usersRemoveProject,
   usersDelete: usersDelete
 }

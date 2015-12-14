@@ -23,6 +23,10 @@ router.route('/users/:id')
 router.route('/users/:id/addproject')
   .put(usersController.usersAddProject)
 
+router.route('/users/:id/removeproject')
+  .put(usersController.usersRemoveProject)
+
+
 router.route('/projects')
   .get(projectsController.projectsIndex)
   .post(projectsController.projectsCreate)
