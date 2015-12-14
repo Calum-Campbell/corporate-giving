@@ -5,11 +5,13 @@
   </div>
   <div class="pure-u-3-4">
     <ul>
+      <li>{{project._id}}</li>
       <li>{{ project.title }}</li>
       <hr>
       <li>{{project.need}}</li>
       <li>{{project.summary}}</li>
       <li>{{project.themeName}}</li>
+      <button ng-click="projects.addProjectToUser(project)">ADD</button>
     </ul>
   </div>
 </div>

@@ -13,6 +13,10 @@ function User($resource, API){
       'query':     { method: 'GET', isArray: false},
       'remove':    { method: 'DELETE' },
       'delete':    { method: 'DELETE' },
+      'addProject': { 
+        url: API + '/users/:id/addproject',
+        method: 'PUT'
+      },
       'register': {
         url: API +'/register',
         method: "POST"

@@ -20,6 +20,9 @@ router.route('/users/:id')
   .patch(usersController.usersUpdate)
   .delete(usersController.usersDelete)
 
+router.route('/users/:id/addproject')
+  .put(usersController.usersAddProject)
+
 router.route('/projects')
   .get(projectsController.projectsIndex)
   .post(projectsController.projectsCreate)
