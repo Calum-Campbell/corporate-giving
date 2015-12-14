@@ -87,6 +87,17 @@ self.getUsers = function(){
 //   })
 // }
 
+self.checkProject = function(projectId){
+  for (var i = self.user.projects.length - 1; i >= 0; i--) {
+    console.log(self.user.projects[i])
+    if(self.user.projects[i] === projectId){
+      return true
+  }else{
+    return false
+  }
+}
+}
+
 self.addProjectToUser = function(project){
   self.user = TokenService.decodeToken();
   var data = {
@@ -94,9 +105,19 @@ self.addProjectToUser = function(project){
   }
   console.log(data)
   User.addProject({id: self.user._id}, data, function(user){
-    console.log(user);
+    // self.checkProject(project._id)
+    self.getProjects();
   });
 }
+
+self.getUser = function(){
+  self.user = TokenService.decodeToken();
+  User.get({id: self.user._id}, function(data){
+    console.log(data.user)
+    self.user = data.user
+   })
+  };
+
 
 self.removeProjectFromUser = function(project){
   self.user = TokenService.decodeToken();
@@ -105,7 +126,7 @@ self.removeProjectFromUser = function(project){
   }
   console.log(data)
   User.removeProject({id: self.user._id}, data, function(user){
-    console.log(user);
+    // self.checkProject(project._id)
   });
 }
 
@@ -114,5 +135,6 @@ self.removeProjectFromUser = function(project){
 
 self.getProjects();
 self.getUsers();
+self.getUser();
 
 }
