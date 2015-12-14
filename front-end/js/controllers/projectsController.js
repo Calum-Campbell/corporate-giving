@@ -9,6 +9,7 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService){
   self.all     = [];
   self.users   = [];
   self.user    = {};
+  self.userProjects = [];
   self.project = {};
 
 
@@ -74,9 +75,9 @@ self.getProjects = function(){
 }
 
 self.getUsers = function(){
- User.query(function(data){
-  return self.users = data.users;
-});
+  User.query(function(data){
+    return self.users = data.users;
+  });
 }
 
 //  self.add = function(){
@@ -88,14 +89,7 @@ self.getUsers = function(){
 // }
 
 self.checkProject = function(projectId){
-  for (var i = self.user.projects.length - 1; i >= 0; i--) {
-    console.log(self.user.projects[i])
-    if(self.user.projects[i] === projectId){
-      return true
-  }else{
-    return false
-  }
-}
+  return self.userProjects.indexOf(projectId) === -1 ? false : true;
 }
 
 self.addProjectToUser = function(project){
@@ -103,32 +97,35 @@ self.addProjectToUser = function(project){
   var data = {
     projectId: project._id
   }
-  console.log(data)
+  // console.log(data)
   User.addProject({id: self.user._id}, data, function(user){
+    self.userProjects.push(project._id);
     // self.checkProject(project._id)
-    self.getProjects();
+    // self.getProjects();
   });
 }
-
-self.getUser = function(){
-  self.user = TokenService.decodeToken();
-  User.get({id: self.user._id}, function(data){
-    console.log(data.user)
-    self.user = data.user
-   })
-  };
-
 
 self.removeProjectFromUser = function(project){
   self.user = TokenService.decodeToken();
   var data = {
     projectId: project._id
   }
-  console.log(data)
+  // console.log(data)
   User.removeProject({id: self.user._id}, data, function(user){
+    var index = self.userProjects.indexOf(project._id);
+    self.userProjects.splice(index, 1);
     // self.checkProject(project._id)
   });
 }
+
+self.getUser = function(){
+  self.user = TokenService.decodeToken();
+  User.get({id: self.user._id}, function(data){
+    // console.log(data.user)
+    self.user = data.user
+    self.userProjects = self.user.projects;
+  })
+};
 
 // self.getLoopProjects(8992);
 // self.getWebProject();

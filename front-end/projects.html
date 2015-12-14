@@ -11,7 +11,8 @@
       <li>{{project.need}}</li>
       <li>{{project.summary}}</li>
       <li>{{project.themeName}}</li>
-      <button ng-hide="projects.checkProject(project._id)" ng-click="projects.addProjectToUser(project) ">ADD</button>
+      {{ projects.checkProject(project._id) }}
+      <button ng-hide="projects.checkProject(project._id)" ng-click="projects.addProjectToUser(project)">ADD</button>
       <button ng-show="projects.checkProject(project._id)" ng-click="projects.removeProjectFromUser(project)">remove</button>
     </ul>
   </div>
