@@ -39,6 +39,12 @@ function ThemesController(Theme, $http){
    })
   }
 
+  self.getThemes = function(){
+    Theme.query(function(data){
+      return self.all = data;
+    })
+  }
+  self.getThemes();
 // self.getWebThemeNames();
 
 }
