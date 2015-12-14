@@ -2,6 +2,12 @@ var serialize = require("../helpers/serialize");
 var rp        = require("request-promise");
 var base_url  = "https://api.globalgiving.org"
 var path      = "/api/public/projectservice/all/projects/active"
+var mongoose = require("mongoose");
+
+var config   = require("../config/config");
+
+mongoose.connect(config.database);
+
 
 var themePath = "/api/public/projectservice/themes"
 
@@ -29,8 +35,8 @@ function themeScrape(Url) {
 
     themes.theme.forEach(function(theme){
       var newTheme = new Theme(theme)
-      console.log(newTheme)
-      newTheme.save(Theme,function(err){
+      newTheme.save(function(err){
+        console.log(err)
        if (err) return res.status(500).json({message: "Something went wrong!"});
        res.status(201).json({message: 'Theme successfully added.', theme: theme});
      })
