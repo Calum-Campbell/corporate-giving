@@ -97,6 +97,17 @@ self.addProjectToUser = function(project){
   });
 }
 
+self.removeProjectFromUser = function(project){
+  self.user = TokenService.decodeToken();
+  var data = {
+    projectId: project._id
+  }
+  console.log(data)
+  User.removeProject({id: self.user._id}, data, function(user){
+    console.log(user);
+  });
+}
+
 // self.getLoopProjects(8992);
 // self.getWebProject();
 self.getProjects();
