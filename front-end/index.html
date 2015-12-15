@@ -25,28 +25,31 @@
   <script type="text/javascript" src="./js/controllers/usersController.js"></script>
   <script type="text/javascript" src="./js/controllers/projectsController.js"></script>
   <script type="text/javascript" src="./js/controllers/themesController.js"></script>
+ <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
 
 <!-- Stylesheets -->
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
-  <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,200,600,500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/projects.css">
 </head>
 
 <body ng-controller="UsersController as users">
 <!-- Header -->
   <header >
-    <nav>
-      <div class="pure-menu pure-menu-horizontal">
-        <a href="#" class="pure-menu-heading pure-menu-link" ui-sref-active="active" ui-sref="home"><h1>Cause</h1></a>
-        <ul class="pure-menu-list">
-          <li ng-hide="users.checkLoggedIn()"class="pure-menu-item"><a href="#" class="pure-menu-link" ui-sref-active="active" ui-sref="login">Login</a></li>
-          <li ng-hide="users.checkLoggedIn()" class="pure-menu-item"><a href="#" class="pure-menu-link" ui-sref-active="active" ui-sref="register">Register</a></li>
-          <li ng-show="users.checkLoggedIn()" class="pure-menu-item"><a href="#" class="pure-menu-link" ui-sref-active="active" ui-sref="projects">Projects</a></li>
-          <li ng-show="users.checkLoggedIn()" class="pure-menu-item"><a href="#" class="pure-menu-link" ui-sref-active="active" ui-sref="themes">Themes</a></li>
-          <li ng-show="users.checkLoggedIn()" class="pure-menu-item"><a href="#" class="pure-menu-link" ui-sref="home" ng-click="users.logout()">Logout</a></li>
-        </ul>
+    <nav class="navbar navbar-default">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand" ui-sref-active="active" ui-sref="home"><h1>Cause</h1></a>
+        <div class="collapse navbar-collapse">
+           <ul class="nav navbar-nav">
+            <li ng-hide="users.checkLoggedIn()"class="active"><a href="#" ui-sref-active="active" ui-sref="login">Login</a></li>
+            <li ng-hide="users.checkLoggedIn()" class="pure-menu-item"><a href="#" ui-sref-active="active" ui-sref="register">Register</a></li>
+            <li ng-show="users.checkLoggedIn()" class="pure-menu-item"><a href="#" ui-sref-active="active" ui-sref="projects">Projects</a></li>
+            <li ng-show="users.checkLoggedIn()" ><a href="#"ui-sref-active="active" ui-sref="themes">Themes</a></li>
+            <li ng-show="users.checkLoggedIn()" ><a href="#" ui-sref="home" ng-click="users.logout()">Logout</a></li>
+            </ul>
+        </div>
       </div>
     </nav>
   </header>

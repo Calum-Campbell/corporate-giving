@@ -1,0 +1,26 @@
+.project-info ul{
+  list-style-type: none;
+}
+
+li.row.themeAndButton {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.headline {
+  text-align: center;
+}
+
+.project-image img{
+  border-radius: 30px;
+}
+
+.project-button {
+  display: block;
+  width: 100%;
+}
+
+.project-container {
+  margin-bottom: 50px;
+  text-align: center;
+}
