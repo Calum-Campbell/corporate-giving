@@ -72,6 +72,7 @@ self.removeProjectFromUser = function(project){
 // self.getLoopProjects(8992);
 // self.getWebProject();
 
+
 self.getProjects();
 self.getUsers();
 self.getUser();

@@ -10,7 +10,7 @@ function usersIndex(req, res) {
 }
 
 function usersShow(req, res){
-  User.findById(req.params.id).populate("themes").exec(function(err, user){
+  User.findById(req.params.id).populate("themes").populate("projects").exec(function(err, user){
     if (err) return res.status(404).json({message: 'Something went wrong.'});
     res.status(200).json({ user: user });
   });

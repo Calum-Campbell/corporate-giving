@@ -28,6 +28,15 @@ angular
         templateUrl: "projects.html",
         controller: "ProjectsController as projects"
       })
+      .state('projectsShow', {
+        url: "/projects/:projectId",
+        templateUrl: "projectShow.html",
+        controller: "ProjectsController as projects"
+      })
+      .state('profile', {
+        url: "/profile",
+        templateUrl: "profile.html",
+      })
       .state('themes', {
         url: "/themes",
         templateUrl: "themes.html",

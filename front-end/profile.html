@@ -1,0 +1,17 @@
+<h1 class="headline">Chosen Projects</h1>
+<div class="row container-fluid col-xs-12 col-lg-12 project-container"ng-repeat="project in users.user.projects">
+  <div class="container-fluid col-xs-2 col-lg-2"></div>
+  <div class="project-image col-xs-12 col-lg-3">
+      <img src="{{project.imageLink}}">
+    </div>
+    <div class=" col-xs-12 col-lg-5 project-info">
+      <ul>
+        <li class="row"><strong>{{ project.organization }}</strong></li>
+        <hr>
+        <li class="row">{{project.summary}}</li>
+        <li class="row themeAndButton">{{project.themeName}}</li>
+      </ul>
+    </div>
+  <div class="container-fluid col-xs-2 col-lg-2">
+  </div>
+</div>

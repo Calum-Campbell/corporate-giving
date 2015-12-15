@@ -57,7 +57,7 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
   self.getUser = function(){
     self.user = TokenService.decodeToken();
     User.get({id: self.user._id}, function(data){
-      // console.log(data.user)
+      console.log("GETTING USERS AGAIN")
       self.user = data.user
       self.userThemes = self.user.themes;
     })
@@ -74,7 +74,7 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
     }
     User.addTheme({id: self.user._id}, data, function(user){
       self.userThemes.push(theme._id);
-      console.log(self.userThemes)
+      self.checkTheme(theme._id);
     });
   }
 
