@@ -2,8 +2,8 @@ angular
 .module('cause-app')
 .controller('ProjectsController', ProjectsController);
 
-ProjectsController.$inject = ["Project", "User","$http", "CurrentUser", 'TokenService']
-function ProjectsController(Project, User, $http, CurrentUser, TokenService){
+ProjectsController.$inject = ["Project", "User","$http", "CurrentUser", 'TokenService', 'Theme']
+function ProjectsController(Project, User, $http, CurrentUser, TokenService, Theme){
   var self = this;
 
   self.all     = [];
@@ -11,6 +11,7 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService){
   self.user    = {};
   self.userProjects = [];
   self.project = {};
+  self.themes = []
 
 self.getUsers = function(){
   User.query(function(data){
@@ -24,11 +25,13 @@ self.getProjects = function(){
   })
 }
 
+
 self.getUser = function(){
   self.user = TokenService.decodeToken();
   User.get({id: self.user._id}, function(data){
     self.user = data.user
     self.userProjects = self.user.projects;
+    self.userThemes = self.user.themes;
   })
 };
 
@@ -36,6 +39,11 @@ self.getUser = function(){
 self.checkProject = function(projectId){
   return self.userProjects.indexOf(projectId) === -1 ? false : true;
 }
+
+// self.checkUserThemes = function(userThemes){
+//  console.log(userThemes)
+//  return true
+// }
 
 self.addProjectToUser = function(project){
   self.user = TokenService.decodeToken();

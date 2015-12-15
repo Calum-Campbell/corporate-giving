@@ -1,6 +1,6 @@
 <h1>Themes</h1>
-<div class="pure-g" ng-repeat="theme in themes.all">
-  <div class="pure-u-1">
+<div ng-repeat="theme in themes.all">
+  <div >
     <ul>
       <li>{{theme.name}}</li>
       {{themes.checkTheme(theme._id)}}
