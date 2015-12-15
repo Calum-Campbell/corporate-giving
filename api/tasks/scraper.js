@@ -79,7 +79,7 @@ function scrape(url) {
       newProject.need = project.need;
       newProject.longTermImpact = project.longTermImpact;
       newProject.activities = project.activities;
-      newProject.imageLink = project.imagelink;
+      newProject.imageLink = project.imageLink;
       newProject.longitude = project.longitude;
       newProject.latitude = project.latitude;
 
