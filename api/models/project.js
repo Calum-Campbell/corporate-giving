@@ -24,7 +24,8 @@ var projectSchema = mongoose.Schema({
           activities: {type: String},
           imageLink: {type: String},
           longitude: {type: Number},
-          latitude: {type: Number}
+          latitude: {type: Number},
+          logoUrl: {type: String}
           })
       
 

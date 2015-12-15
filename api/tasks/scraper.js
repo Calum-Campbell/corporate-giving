@@ -8,19 +8,19 @@ var Project = require("../models/project");
 
 mongoose.connect(config.database);
 
-var path      = "/api/public/projectservice/all/projects/active"
-// var themePath = "/api/public/projectservice/themes"
+// var path      = "/api/public/projectservice/all/projects/active"
+var themePath = "/api/public/projectservice/themes"
 
 var initialParams = {
   api_key: "a310a8b0-2e3a-4c23-aedf-ec13bf0e00a3",
 }
 
 
-var url = createUrl(base_url, path, initialParams);
-// var themeUrl = createUrl(base_url, themePath, initialParams);
+// var url = createUrl(base_url, path, initialParams);
+var themeUrl = createUrl(base_url, themePath, initialParams);
 
-scrape(url);
-// themeScrape(themeUrl);
+// scrape(url);
+themeScrape(themeUrl);
 
 function themeScrape(Url) {
   return rp({
@@ -82,6 +82,7 @@ function scrape(url) {
       newProject.imageLink = project.imageLink;
       newProject.longitude = project.longitude;
       newProject.latitude = project.latitude;
+      newProject.logoUrl = project.organization.logoUrl;
 
       newProject.save(function(err){
        if (err) return res.status(500).json({message: "Something went wrong!"});
