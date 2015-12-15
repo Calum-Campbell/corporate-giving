@@ -1,0 +1,6 @@
+.home-container {
+  background: url(../assets/images/dessert.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  height:690px;
+  width:auto;
+}
