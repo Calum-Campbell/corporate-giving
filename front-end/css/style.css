@@ -8,22 +8,31 @@ nav.navbar {
     left: 0;
     right: 0;
     height: 50px;
-    background-color: red;
+    background-color: #e7e7e7
+}
+
+.footer img {
+  height: 30px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+}
+
+.footer p {
+  text-align: center;
 }
 
 .footer-1 {
-  background-color: blue;
   height: 50px
 }
 .footer-2 {
-  background-color: yellow;
   height: 50px
 }
 .footer-3 {
-  background-color: black;
   height: 50px
 }
 .footer-4 {
-  background-color: blue;
   height: 50px
 }
