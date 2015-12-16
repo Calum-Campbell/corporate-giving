@@ -2,14 +2,15 @@ angular
 .module('cause-app')
 .controller('ProjectsController', ProjectsController);
 
-ProjectsController.$inject = ["Project", "User","$http", "CurrentUser", 'TokenService', 'Theme']
-function ProjectsController(Project, User, $http, CurrentUser, TokenService, Theme){
+ProjectsController.$inject = ["Project", "User","$http", "CurrentUser", 'TokenService', 'Theme', '$stateParams']
+function ProjectsController(Project, User, $http, CurrentUser, TokenService, Theme, $stateParams){
   var self = this;
 
   self.all     = [];
   self.users   = [];
   self.user    = {};
   self.userProjects = [];
+  self.selectedProject = {}
   self.project = {};
   self.themes = []
 
@@ -25,11 +26,13 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService, The
     })
   }
 
-  self.projectShow = function(project){
-    Project.get({id : project._id}, function(data){
-      self.project = data;
-      console.log(data)
-    })
+
+  if ($stateParams.id) projectShow();
+
+  function projectShow(){
+   Project.get({ id: $stateParams.id }, function(data){
+     self.selectedProject = data;
+   })
   }
 
   self.alreadyAddedValues = function() {

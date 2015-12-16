@@ -10,7 +10,7 @@
 <div class="row container-fluid col-xs-12 col-lg-12 project-container" ng-repeat="project in projects.all">
   <div class="container-fluid col-xs-2 col-lg-2"></div>
   <div class="project-image col-xs-12 col-lg-3">
-      <a href="#" ng-click="projects.projectShow(project)" ui-sref="projectsShow"><img src="{{project.imageLink}}"></a>
+      <a href="#" ui-sref="projectsShow({id:project._id})"><img src="{{project.imageLink}}"></a>
     </div>
     <div class=" col-xs-12 col-lg-5 project-info">
       <ul>
