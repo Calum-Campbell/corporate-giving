@@ -33,9 +33,10 @@ angular
         templateUrl: "projectShow.html",
         controller: "ProjectsController as projects"
       })
-      .state('profile', {
-        url: "/profile",
-        templateUrl: "profile.html",
+      .state('basket', {
+        url: "/basket",
+        templateUrl: "basket.html",
+        controller: "ProjectsController as projects"
       })
       .state('themes', {
         url: "/themes",
