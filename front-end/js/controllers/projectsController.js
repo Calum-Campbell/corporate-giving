@@ -32,7 +32,27 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService, The
   function projectShow(){
    Project.get({ id: $stateParams.id }, function(data){
      self.selectedProject = data;
+     self.initialize(data);
    })
+  }
+
+  self.initialize = function(data) {
+    console.log(data.latitude)
+    var mapCanvas = document.getElementById('map');
+    var mapOptions = {
+      center: new google.maps.LatLng(data.latitude, data.longitude),
+      zoom: 8,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    self.map = new google.maps.Map(mapCanvas, mapOptions)
+    self.addPin(data);
+  }
+
+  self.addPin = function(data){
+    var marker = new google.maps.Marker({
+      position: {lat: data.latitude, lng: data.longitude},
+      map: self.map
+    })
   }
 
   self.alreadyAddedValues = function() {

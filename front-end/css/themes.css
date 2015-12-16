@@ -1,11 +1,21 @@
-.theme-button{
-  height:5px;
-  width:5px;
+.theme-positive, .theme-null{
+  height:100px;
+  width:100px;
 }
 
 .theme-tags img {
   height: 40px;
   width: auto;
+}
+
+.theme-positive {
+  border: 1px solid green;
+  background-color: white;
+  border-radius: 3px;
+}
+.theme-null {
+  border: 1px solid white;
+  background-color: white;
 }
 
 .theme-tags li{
