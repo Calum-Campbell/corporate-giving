@@ -29,7 +29,7 @@ angular
         controller: "ProjectsController as projects"
       })
       .state('projectsShow', {
-        url: "/projects/:projectId",
+        url: "/projects/show",
         templateUrl: "projectShow.html",
         controller: "ProjectsController as projects"
       })

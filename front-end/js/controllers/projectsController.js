@@ -13,32 +13,50 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService, The
   self.project = {};
   self.themes = []
 
-self.getUsers = function(){
-  User.query(function(data){
-    return self.users = data.users;
-  });
-}
+  self.getUsers = function(){
+    User.query(function(data){
+      return self.users = data.users;
+    });
+  }
 
-self.getProjects = function(){
-  Project.query(function(data){
-    return self.all = data;
-  })
-}
+  self.getProjects = function(){
+    Project.query(function(data){
+      return self.all = data;
+    })
+  }
+
+  self.projectShow = function(project){
+    Project.get({id : project._id}, function(data){
+      self.project = data;
+    })
+  }
+
+  self.alreadyAddedValues = function() {
+    var themeArray = [];
+    for (var i = 0; i < self.user.themes.length; i++) {
+      themeArray.push(self.user.themes[i].name)
+    };
+    return themeArray;
+  }
+
+  self.themeFilter = function(item) {
+    return !(self.alreadyAddedValues().indexOf(item.themeName) === -1);
+  };
 
 
-self.getUser = function(){
-  self.user = TokenService.decodeToken();
-  User.get({id: self.user._id}, function(data){
-    self.user = data.user
-    self.userProjects = self.user.projects;
-    self.userThemes = self.user.themes;
-  })
-};
+  self.getUser = function(){
+    self.user = TokenService.decodeToken();
+    User.get({id: self.user._id}, function(data){
+      self.user = data.user
+      self.userProjects = self.user.projects;
+      self.userThemes = self.user.themes;
+    })
+  };
 
 
-self.checkProject = function(projectId){
-  return self.userProjects.indexOf(projectId) === -1 ? false : true;
-}
+  self.checkProject = function(projectId){
+    return self.userProjects.indexOf(projectId) === -1 ? false : true;
+  }
 
 // self.checkUserThemes = function(userThemes){
 //  console.log(userThemes)
@@ -76,5 +94,6 @@ self.removeProjectFromUser = function(project){
 self.getProjects();
 self.getUsers();
 self.getUser();
+
 
 }
