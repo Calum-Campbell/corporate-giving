@@ -22,7 +22,6 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
   }
 
   self.getThemes = function(){
-
     Theme.query(function(data){
       return self.all = data;
     })
@@ -31,15 +30,12 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
   self.getUser = function(){
     self.user = TokenService.decodeToken();
     User.get({id: self.user._id}, function(data){
-      console.log("GETTING USERS AGAIN")
       self.user = data.user
       self.userThemes = self.user.themes;
     })
   };
 
   self.checkTheme = function(themeId){
-    // self.getUser();
-    console.log(self.userThemes)
     for (var i = 0; i < self.userThemes.length; i++) {
 
       if(self.userThemes[i]._id === themeId) return true

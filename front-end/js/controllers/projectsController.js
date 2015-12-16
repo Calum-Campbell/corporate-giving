@@ -55,21 +55,24 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService, The
 
 
   self.checkProject = function(projectId){
-    return self.userProjects.indexOf(projectId) === -1 ? false : true;
+    for (var i = 0; i < self.userProjects.length; i++) {
+      if(self.userProjects[i]._id === projectId) return true
+    };
+    return false
+
   }
 
 // self.checkUserThemes = function(userThemes){
-//  console.log(userThemes)
 //  return true
 // }
 
 self.addProjectToUser = function(project){
-  self.user = TokenService.decodeToken();
   var data = {
     projectId: project._id
   }
   User.addProject({id: self.user._id}, data, function(user){
-    self.userProjects.push(project._id);
+    self.userProjects.push(project);
+    self.checkProject(project._id)
   });
 }
 
@@ -78,7 +81,6 @@ self.removeProjectFromUser = function(project){
   var data = {
     projectId: project._id
   }
-  // console.log(data)
   User.removeProject({id: self.user._id}, data, function(user){
     var index = self.userProjects.indexOf(project._id);
     self.userProjects.splice(index, 1);
@@ -94,6 +96,5 @@ self.removeProjectFromUser = function(project){
 self.getProjects();
 self.getUsers();
 self.getUser();
-
 
 }
