@@ -1,9 +1,6 @@
 <!-- Login form -->
-<section id="login" ng-hide="users.checkLoggedIn()">
-hello
-  <div>
-    <div >
-      <form role="form" name="users.loginForm" ng-submit="users.login()" novalidate>
+<section ng-hide="users.checkLoggedIn()">
+      <form  role="form" name="users.loginForm" ng-submit="users.login()" novalidate>
         <legend>Login</legend>
 
         <div >
@@ -27,8 +24,5 @@ hello
         <div>
           <button type="submit" class="pure-button pure-button-primary">Login</button>
         </div>
-
       </form>
-    </div>
-  </div>
 </section>

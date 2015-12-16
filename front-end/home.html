@@ -1,2 +1,70 @@
 <div class="home-container">
+<div id="login">
+  <section ng-hide="users.checkLoggedIn()">
+    <div>
+      <div >
+        <form role="form" name="users.loginForm" ng-submit="users.login()" novalidate>
+          <legend>Login</legend>
+
+          <div >
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Enter your email" ng-model="users.user.email" required>
+          </div>
+
+          <div ng-messages="users.loginForm['email'].$error" ng-show="(users.loginForm.$submitted && users.loginForm['email'].$invalid)">
+            <p ng-message="required">Email is required.</p>
+          </div>
+
+          <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Enter your password" ng-model="users.user.password" required>
+          </div>
+
+          <div ng-messages="users.loginForm['password'].$error" ng-show="(users.loginForm.$submitted && users.loginForm['password'].$invalid)">
+            <p ng-message="required">Password is required.</p>
+          </div>
+
+          <div>
+            <button type="submit" class="pure-button pure-button-primary">Login</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </section>
+  <!-- Register form -->
+  <section id="register" ng-hide="users.checkLoggedIn()">
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <form name="users.registerForm" class="pure-form pure-form-aligned" ng-submit="users.register()" novalidate>
+
+          <legend>Register</legend>
+
+          <div class="pure-control-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Email" ng-model="users.user.email" required>
+          </div>
+
+          <div class="ng-message-error pure-control-group" ng-messages="users.registerForm['email'].$error" ng-show="(users.registerForm.$submitted || users.registerForm['email'].$touched)">
+            <p ng-message="required">Email is required.</p>
+          </div>
+
+          <div class="pure-control-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" placeholder="Password" ng-model="users.user.password" required>
+          </div>
+
+          <div class="ng-message-error pure-control-group" ng-messages="users.registerForm['password'].$error" ng-show="(users.registerForm.$submitted || users.registerForm['password'].$touched)">
+            <p ng-message="required">Password is required.</p>
+          </div>
+
+          <div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary">Register</button>
+          <div class="pure-controls">
+          
+        </form>
+      </div>
+    </div>
+  </section>
+  </div>
 </div>

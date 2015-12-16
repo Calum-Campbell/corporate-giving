@@ -41,7 +41,7 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService, The
     var mapCanvas = document.getElementById('map');
     var mapOptions = {
       center: new google.maps.LatLng(data.latitude, data.longitude),
-      zoom: 8,
+      zoom: 4,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
     self.map = new google.maps.Map(mapCanvas, mapOptions)

@@ -9,3 +9,14 @@
   margin-top: 0px;
   text-decoration: underline;
 }
+
+.footer-not-logged p{
+  text-align: center;
+  margin-top: 10px ;
+}
+
+#login {
+  background-color: green;
+  width: 300px;
+  margin: 0 auto;
+}
