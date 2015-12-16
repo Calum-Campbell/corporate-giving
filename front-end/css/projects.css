@@ -1,3 +1,8 @@
+.project-tags img {
+  height: 40px;
+  width: auto;
+}
+
 .project-info ul{
   list-style-type: none;
 }
