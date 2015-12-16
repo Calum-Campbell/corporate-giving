@@ -28,6 +28,7 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService, The
   self.projectShow = function(project){
     Project.get({id : project._id}, function(data){
       self.project = data;
+      console.log(self.project)
     })
   }
 
@@ -77,12 +78,12 @@ self.addProjectToUser = function(project){
 }
 
 self.removeProjectFromUser = function(project){
-  self.user = TokenService.decodeToken();
   var data = {
     projectId: project._id
   }
   User.removeProject({id: self.user._id}, data, function(user){
-    var index = self.userProjects.indexOf(project._id);
+    console.log(self.userProjects.indexOf(project))
+    var index = self.userProjects.indexOf(project);
     self.userProjects.splice(index, 1);
     // self.checkProject(project._id)
   });

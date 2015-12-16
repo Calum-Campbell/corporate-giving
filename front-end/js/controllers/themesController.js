@@ -60,7 +60,7 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
       themeId: theme._id
     }
     User.removeTheme({id: self.user._id}, data, function(user){
-      var index = self.userThemes.indexOf(theme._id);
+      var index = self.userThemes.indexOf(theme);
       self.userThemes.splice(index, 1);
     });
   }
