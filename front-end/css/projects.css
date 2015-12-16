@@ -2,10 +2,14 @@
   height: 40px;
   width: auto;
 }
-
-.project-tags li{
-  
+.project-tags li {
+  list-style-type: none;
 }
+
+.project-container.project-info {
+  margin-top: 0px
+}
+
 .project-info ul{
   list-style-type: none;
 }
@@ -21,6 +25,7 @@ li.row.themeAndButton {
 
 .project-image img{
   border-radius: 3px;
+  margin-top: 20px;
 }
 
 .project-button {
@@ -29,6 +34,6 @@ li.row.themeAndButton {
 }
 
 .project-container {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   text-align: center;
 }
