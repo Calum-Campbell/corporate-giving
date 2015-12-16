@@ -4,6 +4,7 @@
 }
 
 .project-tags li{
+  
 }
 .project-info ul{
   list-style-type: none;
@@ -19,7 +20,7 @@ li.row.themeAndButton {
 }
 
 .project-image img{
-  border-radius: 30px;
+  border-radius: 3px;
 }
 
 .project-button {
