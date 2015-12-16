@@ -28,7 +28,7 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService, The
   self.projectShow = function(project){
     Project.get({id : project._id}, function(data){
       self.project = data;
-      console.log(self.project)
+      console.log(data)
     })
   }
 
@@ -97,5 +97,4 @@ self.removeProjectFromUser = function(project){
 self.getProjects();
 self.getUsers();
 self.getUser();
-
 }
