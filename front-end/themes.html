@@ -4,8 +4,8 @@
     <ul>
       <li>{{theme.name}}</li>
       {{themes.checkTheme(theme._id)}}
-      <button ng-hide="themes.checkTheme(theme._id)" ng-click="themes.addThemeToUser(theme)">ADD</button>
-      <button ng-hide="themes.checkThemes(theme._id)" ng-click="themes.removeThemeFromUser(theme)">remove</button>
+      <button ng-if="!themes.checkTheme(theme._id)" ng-click="themes.addThemeToUser(theme)">ADD</button>
+      <button ng-if="themes.checkTheme(theme._id)" ng-click="themes.removeThemeFromUser(theme)">remove</button>
     </ul>
   </div>
 </div>

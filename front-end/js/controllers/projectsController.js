@@ -32,6 +32,7 @@ self.getUser = function(){
     self.user = data.user
     self.userProjects = self.user.projects;
     self.userThemes = self.user.themes;
+    console.log(data.user)
   })
 };
 
