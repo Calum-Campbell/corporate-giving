@@ -18,8 +18,8 @@
         <hr>
         <li class="row">{{project.summary}}</li>
         <li class="row themeAndButton">{{project.themeName}}</li>
-        <li><button type="button" class="btn-success project-button" ng-if="!projects.checkProject(project._id)" ng-click="projects.addProjectToUser(project)">ADD</button>
-        <button ng-if="projects.checkProject(project._id)" ng-click="projects.removeProjectFromUser(project)">remove</button></li>
+        <li><button type="button" class="btn btn-success project-button" ng-if="!projects.checkProject(project._id)" ng-click="projects.addProjectToUser(project)">ADD</button>
+        <button ng-if="projects.checkProject(project._id)" class="btn btn-danger project-button" ng-click="projects.removeProjectFromUser(project)">remove</button></li>
       </ul>
     </div>
   <div class="container-fluid col-xs-2 col-lg-2">
