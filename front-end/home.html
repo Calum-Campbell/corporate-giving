@@ -1,8 +1,5 @@
 <div class="home-container">
-<div id="login">
-  <section ng-hide="users.checkLoggedIn()">
-    <div>
-      <div >
+  <div id="login" ng-hide="users.checkLoggedIn()">
         <form role="form" name="users.loginForm" ng-submit="users.login()" novalidate>
           <legend>Login</legend>
 
@@ -11,17 +8,9 @@
             <input type="text" name="email" placeholder="Enter your email" ng-model="users.user.email" required>
           </div>
 
-          <div ng-messages="users.loginForm['email'].$error" ng-show="(users.loginForm.$submitted && users.loginForm['email'].$invalid)">
-            <p ng-message="required">Email is required.</p>
-          </div>
-
           <div>
             <label for="password">Password</label>
             <input type="password" name="password" placeholder="Enter your password" ng-model="users.user.password" required>
-          </div>
-
-          <div ng-messages="users.loginForm['password'].$error" ng-show="(users.loginForm.$submitted && users.loginForm['password'].$invalid)">
-            <p ng-message="required">Password is required.</p>
           </div>
 
           <div>
@@ -29,10 +18,9 @@
           </div>
 
         </form>
-      </div>
-    </div>
-  </section>
-  <!-- Register form -->
+  </div>
+</div>
+  <!-- Register form Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
   <section id="register" ng-hide="users.checkLoggedIn()">
     <div class="pure-g">
       <div class="pure-u-1">
@@ -66,5 +54,4 @@
       </div>
     </div>
   </section>
-  </div>
 </div>
