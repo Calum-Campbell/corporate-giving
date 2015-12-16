@@ -1,0 +1,13 @@
+.theme-button{
+  height:5px;
+  width:5px;
+}
+
+.theme-tags img {
+  height: 40px;
+  width: auto;
+}
+
+.theme-tags li{
+  height: 1px;
+}

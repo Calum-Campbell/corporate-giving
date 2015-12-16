@@ -1,11 +1,11 @@
-<h1 class="headline">Themes</h1>
+<h1 class="headline">Catagories</h1>
 
 <div class="row container-fluid col-xs-4 col-lg-12 project-container project-info" ng-repeat="theme in themes.all">
-  <ul class="project-tags">
+  <ul class="theme-tags">
     <img ng-src="/assets/images/{{theme.name}}.png"/>
     <li>{{theme.name}}</li>
-    <button ng-if="!themes.checkTheme(theme._id)" ng-click="themes.addThemeToUser(theme)">ADD</button>
-    <button ng-if="themes.checkTheme(theme._id)" ng-click="themes.removeThemeFromUser(theme)">remove</button>
+    <button class="theme-button" ng-if="!themes.checkTheme(theme._id)" ng-click="themes.addThemeToUser(theme)">a</button>
+    <button ng-if="themes.checkTheme(theme._id)" ng-click="themes.removeThemeFromUser(theme)">r</button>
   </ul>
 </div>
 
