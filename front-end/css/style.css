@@ -33,6 +33,13 @@ button:focus{
   text-align: center;
 }
 
+.footer-not-logged p{
+  text-align: center;
+  margin-top: 5px ;
+  margin-bottom: 5px;
+}
+
+
 .form-button {
   margin-top: 10px;
   margin
