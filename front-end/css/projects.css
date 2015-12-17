@@ -20,6 +20,11 @@
   width: 230px;
   overflow: hidden;
 }
+
+.project-selected{
+  border: 1px solid black;
+}
+
 .project-summary:after {
   content: '...';
 }
@@ -27,6 +32,7 @@
 .project-info ul{
   text-align: justify;
   list-style-type: none;
+  padding-left: 15px;
 }
 
 li.row.themeAndButton {
@@ -39,15 +45,19 @@ li.row.themeAndButton {
 }
 
 .image-box {
-  height: 100px;
-  width: 100px;
-  background-size: cover;
+  border: 3px solid white;
+  height: 110px;
+  width: 110px;
+  margin-left: 15px;
+  overflow: hidden;
+  position: relative;
 }
 
 .project-image img{
-  height: 100px;
-  width: auto;
-  margin-top: 5px;
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
+  margin: auto;
 }
 
 .project-button {
