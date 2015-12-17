@@ -49,27 +49,33 @@
       </nav>
     </header>
     <main ui-view></main>
-  <footer ng-show="users.checkLoggedIn()" class="footer row container-fluid">
+  <footer ng-show="users.checkLoggedIn()" class="footer ">
   <a href="#" ui-sref="projects" ui-sref-active="active-footer">
-    <div class="container-fluid col-xs-3 footer-1 " >
+    <div class="footer-1" >
         <img src="/assets/images/home.png">
       <p>Discover</p>
     </div>
   </a>
-    <a href="#" ui-sref="themes">
-      <div class="container-fluid col-xs-3 footer-2">
+    <a href="#" ui-sref="themes" ui-sref-active="active-footer">
+      <div class="footer-1">
         <img src="/assets/images/tag.png">
       <p>Tags</p>
       </div>
     </a>
-    <a href="#" ui-sref="basket">
-      <div class="container-fluid col-xs-3 footer-3">
+    <a href="#" ui-sref="basket" ui-sref-active="active-footer">
+      <div class="footer-1">
         <img src="/assets/images/donate.png">
         <p>Donate</p>
       </div>
     </a>
-    <a href="#" ui-sref="home" ng-click="users.logout()">
-      <div class="container-fluid col-xs-3 footer-4">
+    <a href="#" ng-click="users.logout()" ui-sref-active="active-footer">
+      <div class="footer-1">
+        <img src="/assets/images/blog.png">
+        <p>Blog</p>
+      </div>
+    </a>
+    <a href="#" ui-sref="home" ng-click="users.logout()" ui-sref-active="active-footer">
+      <div class="footer-1">
         <img src="/assets/images/logout.png">
         <p>Leave</p>
       </div>

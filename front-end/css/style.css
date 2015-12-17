@@ -57,14 +57,24 @@ button:focus{
 }
 
 
-.active-footer {
-background-color: red;
+.active-footer p{
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #6FC8B8;
+}
+
+a:focus {
+  color: #6FC8B8;
 }
 
 .footer-1 {
-  height: 50px
+  display: inline-block;
+  height: 50px;
+  width: 19%;
 }
-.footer-2 {
+/*.footer-2 {
   height: 50px
 }
 .footer-3 {
@@ -72,4 +82,4 @@ background-color: red;
 }
 .footer-4 {
   height: 50px
-}
+}*/

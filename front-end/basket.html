@@ -1,12 +1,6 @@
 <br>
 
-<!-- <form ng-submit="projects.donateAmount()">
-  Enter text and hit enter:
-  <input type="text" ng-model="users.user.donationAmount" name="donation" />
-  <input type="submit" id="submit" value="Submit" />
-</form> -->
-
-<div class="row container-fluid col-xs-12 col-lg-12 basket-container"ng-repeat="project in projects.userProjects">
+<div class=" container-fluid col-xs-12 col-lg-12 basket-container"ng-repeat="project in projects.userProjects">
  <div class="col-xs-12 col-lg-12 project-container">
    <div class="project-image col-xs-4 col-lg-3 project-info">
      <a ui-sref="projectsShow({id:project._id})">
@@ -33,7 +27,7 @@
     <div class="btn-group">
       <div class="input-group">
         <span class="input-group-addon">£</span>
-        <input type="text" class="form-control" ng-model="donation" name="donation" />
+        <input type="text" class="form-control clearfix" ng-model="donation" name="donation" />
         <span class="input-group-addon">.00</span>
       </div>
     </div>
