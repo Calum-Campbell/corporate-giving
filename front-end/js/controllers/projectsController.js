@@ -114,9 +114,9 @@ self.removeProjectFromUser = function(project){
   });
 }
 
-self.donateAmount = function(){
+self.donateAmount = function(donation){
 
-  console.log(self.user)
+  console.log(donation)
   
 }
 

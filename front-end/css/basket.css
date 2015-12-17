@@ -1,4 +1,24 @@
-.basket-image {
-  height: 10px;
+.basket-image img {
+  vertical-align: middle;
+  height: 60px;
   width: auto;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.basket-info {
+  border-top: 1px solid black;
+
+}
+.basket-info ul{
+  text-align: center;
+  list-style-type: none;
+}
+
+.basket-container.basket-info {
+  margin-top: 0px;
 }
