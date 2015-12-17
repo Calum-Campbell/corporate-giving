@@ -10,10 +10,6 @@
   vertical-align: middle;
 }
 
-.basket-info {
-  border-top: 1px solid black;
-
-}
 .basket-info ul{
   text-align: center;
   list-style-type: none;
@@ -21,4 +17,8 @@
 
 .basket-container.basket-info {
   margin-top: 0px;
+}
+
+.super-spacer{
+  height: 200px;
 }
