@@ -1,7 +1,7 @@
 .home-container {
-  background: url(../assets/images/dessert.jpeg) no-repeat center center fixed;
+  background: url(../assets/images/slum.jpeg) no-repeat center center fixed;
   background-size: cover;
-  height:690px;
+  height:500px;
   width:auto;
 }
 
@@ -15,11 +15,17 @@
   margin-top: 10px ;
 }
 
-#login {
+.home-form {
+  padding: 10px;
   position: absolute;
   top: 30%;
   left: 60px;
-  background-color: green;
+  background-color: #E7E7E7;
   width: 300px;
   margin: 0;
+  border-radius: 5px;
+}
+
+.home-form legend {
+text-align: center;
 }

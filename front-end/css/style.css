@@ -28,6 +28,14 @@ button:focus{
   text-align: center;
 }
 
+.form-button {
+  margin-top: 10px;
+  margin
+  display: block;
+  width: 100%;
+}
+
+
 .footer-1 {
   height: 50px
 }
