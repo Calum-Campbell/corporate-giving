@@ -1,7 +1,31 @@
-<h1 class="headline">Chosen Projects</h1>
-<div class="row container-fluid col-xs-12 col-lg-12 project-container"ng-repeat="project in projects.userProjects">
-  <div class="container-fluid col-xs-2 col-lg-2"></div>
-  <div class="project-image col-xs-12 col-lg-3">
+<br>
+
+<!-- <form ng-submit="projects.donateAmount()">
+  Enter text and hit enter:
+  <input type="text" ng-model="users.user.donationAmount" name="donation" />
+  <input type="submit" id="submit" value="Submit" />
+</form> -->
+
+<form ng-submit="projects.donateAmount(donation)">
+  <div class="row container-fluid col-xs-12 col-lg-12">
+    <div class="container-fluid col-xs-2 col-lg-2"></div>
+    <label for="email">How much do you wish to donate? </label>
+    <div class="btn-group">
+      <div class="input-group">
+        <span class="input-group-addon">£</span>
+        <input type="text" class="form-control" name="donation" />
+        <span class="input-group-addon">.00</span>
+      </div>
+    </div>
+    <div class="container-fluid col-xs-2 col-lg-2"></div>
+  </div>
+  <button type="submit" class="btn btn-success form-button" ui-sref="creditCardForm">Donate</button>
+</form>
+
+<h2 class="headline">Chosen Projects</h2>
+  <div class="row container-fluid col-xs-12 col-lg-12 project-container"ng-repeat="project in projects.userProjects">
+    <div class="container-fluid col-xs-2 col-lg-2"></div>
+    <div class="project-image col-xs-12 col-lg-3">
       <img src="{{project.imageLink}}">
     </div>
     <div class=" col-xs-12 col-lg-5 project-info">
@@ -12,9 +36,6 @@
         <li class="row themeAndButton">{{project.themeName}}</li>
       </ul>
     </div>
-  <div class="container-fluid col-xs-2 col-lg-2">
+    <div class="container-fluid col-xs-2 col-lg-2">
+    </div>
   </div>
-</div>
-
-<button type="button" class="btn btn-secondary project-button">Donate</button>
-

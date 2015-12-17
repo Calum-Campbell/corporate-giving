@@ -43,6 +43,10 @@ angular
         templateUrl: "themes.html",
         controller: "ThemesController as themes"
       })
+      .state('creditCardForm', {
+        url: "/payment",
+        templateUrl: "creditCardForm.html",
+      })
 
     $urlRouterProvider.otherwise("/");
   }

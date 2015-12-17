@@ -6,7 +6,7 @@ var userSchema = mongoose.Schema({
     username: { type: String },
     email: { type: String, unique: true, required: true },
     password: { type: String, required: true },
-
+    donationAmount: { type:Number }
   },
   themes: [{ type: mongoose.Schema.ObjectId, ref: 'Theme' }],
   projects: [{ type: mongoose.Schema.ObjectId, ref: 'Project' }]

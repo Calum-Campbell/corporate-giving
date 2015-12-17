@@ -1,5 +1,4 @@
 <h1 class="headline">Catagories</h1>
-
 <div class="row container-fluid col-xs-4 col-lg-12 theme-container project-info" ng-repeat="theme in themes.all">
   <ul class="theme-tags">
     <!-- <img ng-src="/assets/images/{{theme.name}}.png"/> -->
@@ -8,5 +7,6 @@
     <button class="theme-positive" ng-if="themes.checkTheme(theme._id)" ng-click="themes.removeThemeFromUser(theme)"><img ng-src="/assets/images/{{theme.name}}.png"/><p>{{theme.name}}</p></button>
   </ul>
 </div>
+
 
 

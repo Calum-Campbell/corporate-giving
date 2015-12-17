@@ -14,6 +14,8 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService, The
   self.project = {};
   self.themes = []
 
+
+
   self.getUsers = function(){
     User.query(function(data){
       return self.users = data.users;
@@ -112,9 +114,11 @@ self.removeProjectFromUser = function(project){
   });
 }
 
+self.donateAmount = function(){
 
-// self.getLoopProjects(8992);
-// self.getWebProject();
+  console.log(self.user)
+  
+}
 
 
 self.getProjects();
