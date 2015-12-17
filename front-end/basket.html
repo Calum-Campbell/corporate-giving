@@ -22,17 +22,8 @@
 </div>
 
 <form ng-submit="projects.donateAmount(donation)">
-  <div class="row container-fluid col-xs-12 col-lg-12">
-    <div class="container-fluid col-xs-2 col-lg-2"></div>
-    <div class="btn-group">
-      <div class="input-group">
-        <span class="input-group-addon">£</span>
-        <input type="text" class="form-control clearfix" ng-model="donation" name="donation" />
-        <span class="input-group-addon">.00</span>
-      </div>
-    </div>
-    <div class="container-fluid col-xs-2 col-lg-2"></div>
-    <button type="submit" class="btn project-button project-selected" ui-sref="creditCardForm">Donate</button>
+  <div class=" container-fluid col-xs-12 col-lg-12 center">
+    <button type="submit" class="btn project-button" ui-sref="creditCardForm">Donate</button>
   </div>
 </form>
 <div class="super-spacer">

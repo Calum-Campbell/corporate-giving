@@ -46,6 +46,11 @@ angular
       .state('creditCardForm', {
         url: "/payment",
         templateUrl: "creditCardForm.html",
+        controller: "ProjectsController as projects"
+      })
+      .state('blog', {
+        url: "/blog",
+        templateUrl: "blog.html"
       })
 
     $urlRouterProvider.otherwise("/");
