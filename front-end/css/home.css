@@ -16,7 +16,7 @@
   position: absolute;
   top: 30%;
   left: 60px;
-  background-color: #E7E7E7;
+  background-color: white;
   width: 300px;
   margin: 0;
   border-radius: 5px;
@@ -25,6 +25,13 @@
 .home-form label{
   display: block;
   text-align: center;
+ }
+
+ .form-button {
+   margin-top: 10px;
+   display: block;
+   width: 100%;
+   background-color: #6FC8B8;
  }
 
 .home-form legend {

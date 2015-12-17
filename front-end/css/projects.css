@@ -1,16 +1,31 @@
 .project-tags img {
   height: 20px;
-  width: auto;
+  width: 20px;
 }
 .project-tags li {
   list-style-type: none;
+  text-align: justify;
+
 }
 
 .project-container.project-info {
-  margin-top: 0px
+  margin-top: 0px;
+}
+
+.project-info {
+  margin-top: 15px; 
+}
+.project-summary {
+  height: 60px;
+  width: 230px;
+  overflow: hidden;
+}
+.project-summary:after {
+  content: '...';
 }
 
 .project-info ul{
+  text-align: justify;
   list-style-type: none;
 }
 
@@ -23,18 +38,47 @@ li.row.themeAndButton {
   text-align: center;
 }
 
+.image-box {
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+}
+
 .project-image img{
-  border-radius: 3px;
-  margin-top: 20px;
+  height: 100px;
+  width: auto;
+  margin-top: 5px;
 }
 
 .project-button {
-  display: block;
-  width: 100%;
-  
+  margin-top: 10px;
+  display: center;
+  width: 80%;  
+  color: black;
+  border-color: white;
+  background-color: #6FC8B8;
+  border-radius: 0px;
+  margin-bottom: 10px;
+}
+.project-button:hover {
+  border-color: black;
+  background-color: #6FC8B8;
+  color: black;
+}
+
+.project-spacer {
+  background-color: white;
+  height: 30px;
 }
 
 .project-container {
+  padding: 0;
   margin-bottom: 0px;
   text-align: center;
+  background-color: #f7f7f7;
+}
+
+.project-small-tag {
+  height:20px;
+  width: 20px;
 }
