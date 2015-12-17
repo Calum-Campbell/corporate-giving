@@ -26,6 +26,11 @@
   border-radius: 5px;
 }
 
+.home-form label{
+  display: block;
+  text-align: center;
+ }
+
 .home-form legend {
 text-align: center;
 }
