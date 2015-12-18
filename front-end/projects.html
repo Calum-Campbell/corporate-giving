@@ -23,6 +23,7 @@
     <button type="button" class="btn project-button" ng-if="!projects.checkProject(project._id)" ng-click="projects.addProjectToUser(project)">Add to donations</button>
       <button ng-if="projects.checkProject(project._id)" class="btn project-button project-selected" ng-click="projects.removeProjectFromUser(project)">Remove from donations</button>
       <div class="project-spacer"></div>
+      
   </div>
   </div>
 
