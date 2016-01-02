@@ -1,0 +1,31 @@
+<br>
+
+<div class=" container-fluid col-xs-12 col-lg-12 basket-container"ng-repeat="project in projects.userProjects">
+ <div class="col-xs-12 col-lg-12 project-container">
+   <div class="project-image col-xs-4 col-lg-3 project-info">
+     <a ui-sref="projectsShow({id:project._id})">
+     <div class="image-box" style="background-image: url({{project.imageLink}})">
+     </div>
+     </a>
+   </div>
+   <div class=" col-xs-8 col-lg-5 project-info">
+     <ul>
+       <li ><strong>{{ project.organization }}</strong></li>
+       <li class="project-summary">{{project.summary}}</li>
+       <li ><img src="/assets/images/tag-black.png" class="project-small-tag"><strong>{{project.themeName}}</strong></li>
+     </ul>
+   </div>
+   <button type="button" class="btn project-button" ng-if="!projects.checkProject(project._id)" ng-click="projects.addProjectToUser(project)">Add to donations</button>
+     <button ng-if="projects.checkProject(project._id)" class="btn project-button project-selected" ng-click="projects.removeProjectFromUser(project)">Remove from donations</button>
+     <div class="project-spacer"></div>
+ </div>
+</div>
+
+<form ng-submit="projects.donateAmount(donation)">
+  <div class=" container-fluid col-xs-12 col-lg-12 center">
+    <button type="submit" class="btn project-button" ui-sref="creditCardForm">Donate</button>
+  </div>
+</form>
+<div class="super-spacer">
+  <h1>hello</h1>
+</div>

@@ -1,0 +1,17 @@
+<div class=" container-fluid col-xs-12 col-lg-12">
+  <h3 class="headline">What do you care about?</h3>
+</div>
+<div class=" container-fluid col-xs-4 col-lg-12 theme-container project-info" ng-repeat="theme in themes.all">
+  <ul class="theme-tags">
+    <button class="theme-null" ng-if="!themes.checkTheme(theme._id)" ng-click="themes.addThemeToUser(theme)"><img ng-src="/assets/images/{{theme.name}}.png"/><p>{{theme.name}}</p></button>
+    <button class="theme-positive" ng-if="themes.checkTheme(theme._id)" ng-click="themes.removeThemeFromUser(theme)"><img ng-src="/assets/images/{{theme.name}}.png"/><p>{{theme.name}}</p></button>
+  </ul>
+</div>
+<div class="super-spacer">
+  <h1>hello</h1>
+  <h1>hello</h1>
+  <h1>hello</h1>
+</div>
+
+
+
