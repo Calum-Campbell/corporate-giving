@@ -1,6 +1,6 @@
 angular
   .module('cause-app', ['ngResource', 'angular-jwt', 'ui.router'])
-  .constant('API', 'http://localhost:3000/api')
+  .constant('API', 'https://localhost:3000/api')
   .config(MainRouter)
   .config(function($httpProvider){
     $httpProvider.interceptors.push('authInterceptor')
