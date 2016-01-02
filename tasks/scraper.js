@@ -6,7 +6,9 @@ var config   = require("../config/config");
 var Theme = require("../models/theme");
 var Project = require("../models/project");
 
-mongoose.connect(config.database);
+var mongoUri =  process.env.MONGOLAB_URI || config.database
+
+mongoose.connect(mongoUri);
 
 var path      = "/api/public/projectservice/all/projects/active"
 // var themePath = "/api/public/projectservice/themes"
