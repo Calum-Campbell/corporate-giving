@@ -1,6 +1,6 @@
 angular
   .module('cause-app', ['ngResource', 'angular-jwt', 'ui.router'])
-  .constant('API', 'https://localhost:3000/api')
+  .constant('API', 'https://cause-app.herokuapp.com/api')
   .config(MainRouter)
   .config(function($httpProvider){
     $httpProvider.interceptors.push('authInterceptor')
