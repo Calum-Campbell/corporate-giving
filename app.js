@@ -19,6 +19,10 @@ var mongoUri =  process.env.MONGOLAB_URI || config.database
 
 mongoose.connect(mongoUri);
 
+app.set('views', './public');
+app.engine('html', require('ejs').renderFile);
+app.use(express.static(__dirname + '/public'));
+
 require('./config/passport')(passport);
 
 app.use(methodOverride(function(req, res){
