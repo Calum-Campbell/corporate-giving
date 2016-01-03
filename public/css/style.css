@@ -35,16 +35,17 @@ button:focus{
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 200px;
     background-color: #6FC8B8;
 }
 
 .footer img {
-  height: 73px;
+  height: 100px;
   width: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
   padding-top: 5px;
 }
 
@@ -52,14 +53,15 @@ button:focus{
   text-align: center;
   color: white;
   font-weight: 300;
-  font-size: 50px;
+  font-size:55px;
+  margin-top: 50px;
 }
 
 .footer-logged-in p{
   text-align: center;
   color: white;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 45px;
 }
 
 
