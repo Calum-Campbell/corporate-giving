@@ -40,7 +40,7 @@ button:focus{
 }
 
 .footer img {
-  height: 30px;
+  height: 73px;
   width: auto;
   display: block;
   margin-left: auto;
@@ -48,17 +48,18 @@ button:focus{
   padding-top: 5px;
 }
 
-.footer p {
+.footer-not-logged p{
   text-align: center;
   color: white;
   font-weight: 300;
   font-size: 50px;
-
 }
 
-.footer-not-logged p{
+.footer-logged-in p{
   text-align: center;
-  margin-top: 10px ;
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
 }
 
 

@@ -1,10 +1,15 @@
 .theme-positive, .theme-null{
-  height:100px;
-  width:100px;
+  height:300px;
+  width:300px;
 }
 
+.theme-tags {
+  text-align: justify;
+  list-style-type: none;
+  padding: 50px;
+}
 .theme-tags img {
-  height: 40px;
+  height: 200px;
   width: auto;
 }
 
@@ -22,6 +27,6 @@
   background-color: white;
 }
 
-.theme-tags li{
-  height: 1px;
+.theme-tags p{
+  font-size: 40px;
 }
