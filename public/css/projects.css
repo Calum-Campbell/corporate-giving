@@ -21,7 +21,7 @@
   height: 83px;
   width: 500px;
   overflow: hidden;
-  font-size: 15px;
+  font-size: 50px;
 }
 
 .project-selected{
@@ -49,13 +49,16 @@ li.row.themeAndButton {
 
 .image-box {
   border: 3px solid white;
-  height: 150px;
+  height: 120px;
   width: 183px;
   margin-left: 15px;
   overflow: hidden;
   position: relative;
 }
 
+.project-image {
+  width: 23.3%;
+}
 .project-image img{
   position: absolute;
   min-height: 100%;
