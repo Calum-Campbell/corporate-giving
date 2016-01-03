@@ -1,7 +1,7 @@
 .home-container {
   background: url(../assets/images/slum.jpeg) no-repeat center center fixed;
   background-size: cover;
-  height:500px;
+  height:1550px;
   width:auto;
 }
 
@@ -9,25 +9,35 @@
   margin-top: 0px;
 }
 
+.home-form input {
+  font-size: 20px;
+  height: 55px;
+}
 
 .home-form {
   padding: 10px;
   position: absolute;
   top: 30%;
-  left: 60px;
+  left: 15%;
   background-color: white;
-  width: 300px;
+  width: 600px;
+  height: 600px;
   margin: 0;
   border-radius: 5px;
+  font-size: 40px;
+  text-align: center;
 }
 
 .home-form label{
   display: block;
   text-align: center;
+  font-size: 40px;
  }
 
  .form-button {
-   margin-top: 10px;
+   font-size: 50px;
+   height: 80px;
+   margin-top: 50px;
    display: block;
    width: 100%;
    background-color: #6FC8B8;
@@ -35,4 +45,5 @@
 
 .home-form legend {
 text-align: center;
+font-size: 50px;
 }
