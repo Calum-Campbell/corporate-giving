@@ -1,12 +1,11 @@
 .project-tags img {
-  height: 200px;
+  height: 100px;
   width: auto;
   }
   
 .project-tags li {
   list-style-type: none;
   text-align: center;
-  font-size: 40px;
 
 }
 
@@ -16,12 +15,18 @@
 
 .project-info {
   margin-top: 15px; 
+  width: 666px;
 }
+
+.project-info li{
+  font-size: 15px;
+}
+
 .project-summary {
   height: 83px;
   width: 500px;
   overflow: hidden;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .project-selected{
