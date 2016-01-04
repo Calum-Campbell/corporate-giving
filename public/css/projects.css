@@ -91,10 +91,15 @@ li.row.themeAndButton {
   background-color: white;
   height: 30px;
 }
+.project-spacer-grey {
+  background-color: #f7f7f7;
+  height: 10px;
+  margin: 0 auto;
+}
 
 .project-container {
   padding: 0;
-  height: 325px;
+  height: 100%;
   margin-bottom: 0px;
   text-align: center;
   background-color: #f7f7f7;
