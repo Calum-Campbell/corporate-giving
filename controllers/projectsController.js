@@ -13,11 +13,6 @@ function projectsCreate(req, res){
   project.save(function(err){
     if (err) return res.status(500).send(err);
     var id = req.body.project.user_id;
-    // User.findById(id, function(err, user){
-    //    user.projects.push(project);
-    //    user.save();
-    //    return res.status(201).send(project)
-    // });
   });
 }
 

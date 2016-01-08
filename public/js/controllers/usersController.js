@@ -14,12 +14,7 @@ function UsersController(User, TokenService, $state, CurrentUser){
   self.login         = login;
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
-  // self.checkProject  = checkProject;
 
-
-  // self.authenticate = function(provider) {
-  //   $auth.authenticate(provider);
-  // };
 
   // GETs all the users from the api
   function getUsers() {
@@ -28,6 +23,7 @@ function UsersController(User, TokenService, $state, CurrentUser){
    });
   }
 
+  //GETs current user
   function getUser(){
     self.user = TokenService.decodeToken();
     User.get({id: self.user._id}, function(data){
@@ -36,18 +32,6 @@ function UsersController(User, TokenService, $state, CurrentUser){
      })
     };
 
-  //   function checkProject(projectId){
-  //     for (var i = self.user.projects.length - 1; i >= 0; i--) {
-  //       console.log(self.user.projects[i])
-  //       if(self.user.projects[i] === projectId){
-  //         return true
-  //     }else{
-  //       return false
-  //     }
-  //   }
-  // }
-  
-
   // Actions to carry once register or login forms have been submitted
   function handleLogin(res) {
     var token = res.token ? res.token : null;
@@ -55,7 +39,6 @@ function UsersController(User, TokenService, $state, CurrentUser){
       getUsers();
       $state.go('themes');
     }
-    // console.log(res);
     self.user = TokenService.decodeToken();
     CurrentUser.saveUser(self.user)
   }
@@ -88,8 +71,6 @@ function UsersController(User, TokenService, $state, CurrentUser){
   // Checks if the user is logged in, runs every time the page is loaded
   if (CurrentUser.getUser()) {
     getUser();
-    // self.user = TokenService.decodeToken();
-    // console.log(self.user)
   }
 
 return self
