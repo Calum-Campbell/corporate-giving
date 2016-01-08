@@ -51,22 +51,22 @@
 <body ng-controller="UsersController as users">
   <!-- Header -->
   <header >
-      <nav>
-        <h1>Cause</h1>
-      </nav>
-    </header>
-    <main ui-view></main>
+    <nav>
+      <h1>Cause</h1>
+    </nav>
+  </header>
+  <main ui-view></main>
   <footer ng-show="users.checkLoggedIn()" class="footer footer-logged-in">
-  <a href="#" ui-sref="projects" ui-sref-active="active-footer">
-    <div class="footer-1" >
+    <a href="#" ui-sref="projects" ui-sref-active="active-footer">
+      <div class="footer-1" >
         <img src="/assets/images/home.png">
-      <p>Discover</p>
-    </div>
-  </a>
+        <p>Discover</p>
+      </div>
+    </a>
     <a href="#" ui-sref="themes" ui-sref-active="active-footer">
       <div class="footer-1">
         <img src="/assets/images/tag.png">
-      <p>Tags</p>
+        <p>Tags</p>
       </div>
     </a>
     <a href="#" ui-sref="basket" ui-sref-active="active-footer">
@@ -87,7 +87,7 @@
         <p>Leave</p>
       </div>
     </a>
- </footer>
+  </footer>
   <footer ng-show="!users.checkLoggedIn()" class="footer row container-fluid footer-not-logged">
     <p>Everything you care about, in one place</p>
   </footer>
