@@ -82,3 +82,93 @@ a:focus {
   height: 50px;
   width: 19%;
 }
+
+
+@media (min-width:1025px) {
+  nav {
+    height: 90px;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background-color: white;
+  }
+
+  nav h1 {
+    margin: 0;
+    color: #6FC8B8;
+    font-weight: 700;
+    font-size: 60px;
+  }
+
+  nav.navbar {
+    margin: 0;
+  }
+
+  .navbar-brand{
+    text-align: center;
+    text-decoration: underline;
+  }
+
+  button:focus{
+    outline: 0;
+  }
+
+  .footer {
+      position: fixed; 
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background-color: #6FC8B8;
+  }
+
+  .footer img {
+    height: 50px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    padding-top: 5px;
+  }
+
+  .footer-not-logged p{
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size:30px;
+    margin-top: 50px;
+  }
+
+  .footer-logged-in p{
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 15px;
+  }
+
+
+  .active-footer p{
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #6FC8B8;
+  }
+
+  a:focus {
+    color: #6FC8B8;
+  }
+
+  .footer-1 {
+    display: inline-block;
+    height: 20px;
+    width: 19%;
+  }
+
+}
+
+
+
+
+
