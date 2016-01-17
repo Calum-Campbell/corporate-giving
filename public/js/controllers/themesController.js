@@ -36,15 +36,16 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
   };
 
   self.checkTheme = function(themeId){
-    for (var i = 0; i < self.userThemes.length; i++) {
 
+    for (var i = 0; i < self.userThemes.length; i++) {
       if(self.userThemes[i]._id === themeId) return true
     };
     return false
   };
 
   self.addThemeToUser = function(theme){
-    // self.user = TokenService.decodeToken();
+    self.user = TokenService.decodeToken();
+    console.log(self.user)
     var data = {
       themeId: theme._id
     }
