@@ -72,7 +72,7 @@ function ProjectsController(Project, User, $http, CurrentUser, TokenService, The
 
   self.getUser = function(){
     self.user = TokenService.decodeToken();
-    User.get({id: self.user._id}, function(data){
+    User.get({id: self.user._doc._id}, function(data){
       self.user = data.user
       self.userProjects = self.user.projects;
       self.userThemes = self.user.themes;

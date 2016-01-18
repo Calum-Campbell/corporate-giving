@@ -47,11 +47,12 @@ function ThemesController(Theme, $http, User, CurrentUser, TokenService){
 
   self.addThemeToUser = function(theme){
     self.user = TokenService.decodeToken();
-    console.log(self.user._doc._id)
+    // console.log(self.user._doc._id)
+    console.log(theme._id)
     var data = {
       themeId: theme._id
     }
-    User.addTheme({id: self.user._id}, data, function(user){
+    User.addTheme({id: self.user._doc._id}, data, function(user){
       self.userThemes.push(theme);
       self.checkTheme(theme._id);
     });
