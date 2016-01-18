@@ -73,9 +73,9 @@ function usersRemoveProject(req, res){
 function usersAddTheme(req, res){
   var userId = req.params.id;
   var themeId = req.body.themeId;
-  console.log(themeId)
+  // console.log(themeId)
   User.findOne({_id: userId}, function(err, user){
-    console.log(user)
+    console.log(user.themes)
     Theme.findOne({_id: themeId}, function(err, theme){
       user.themes.push(theme);
       user.save(function(err){
