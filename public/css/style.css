@@ -169,6 +169,23 @@ t {
 }
 
 
+/*WIDESCREEN*/
+
+@media (min-width:1200px) {
+
+  .footer-logged-in img{
+    height: 80px;
+    margin-top: 2px;
+  }
+  
+}
+
+
+
+
+
+
+
 
 
 
