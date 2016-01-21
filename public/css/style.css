@@ -84,7 +84,7 @@ a:focus {
 }
 
 
-@media (min-width:1025px) {
+@media (min-width:600px) {
   nav {
     height: 90px;
     width: 100%;
@@ -166,19 +166,15 @@ t {
     width: 19%;
   }
 
-}
-
-
-/*WIDESCREEN*/
-
-@media (min-width:1200px) {
-
   .footer-logged-in img{
     height: 80px;
     margin-top: 2px;
   }
-  
+
 }
+
+
+
 
 
 
