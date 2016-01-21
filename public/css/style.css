@@ -84,7 +84,7 @@ a:focus {
 }
 
 
-@media (min-width:600px) {
+@media (min-width:900px) {
   nav {
     height: 90px;
     width: 100%;
