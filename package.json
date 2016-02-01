@@ -1,7 +1,7 @@
 {
-  "name": "Cause",
+  "name": "corporate-givings",
   "version": "1.0.0",
-  "description": "",
+  "description": "###Personal MEAN stack Project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +23,14 @@
     "passport": "^0.2.0",
     "passport-local": "~0.1.6",
     "request-promise": "^1.0.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Calum-Campbell/cause-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Calum-Campbell/cause-project/issues"
+  },
+  "homepage": "https://github.com/Calum-Campbell/cause-project#readme"
 }

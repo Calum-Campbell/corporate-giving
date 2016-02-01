@@ -33,10 +33,27 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
   <!-- Stylesheets -->
-  <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-</body>
+<!-- Login form -->
+<section>
+      <form  role="form" name="users.loginForm" ng-submit="users.login()">
+        <legend>Login</legend>
+
+        <div >
+          <label for="email">Email</label>
+          <input type="text" name="email" placeholder="Enter your email" ng-model="users.user.email" required>
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="Enter your password" ng-model="users.user.password" required>
+        </div>
+        <div>
+          <button type="submit" class="pure-button pure-button-primary">Login</button>
+        </div>
+      </form>
+</section></body>
 </html>
