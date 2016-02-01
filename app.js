@@ -15,7 +15,7 @@ var config         = require('./config/config');
 var User           = require('./models/user');
 var secret         = require('./config/config').secret;
 
-var mongoUri =  process.env.MONGOLAB_URI || config.database
+var mongoUri =  config.database
 
 mongoose.connect(mongoUri);
 
@@ -58,4 +58,4 @@ app.use(function (err, req, res, next) {
 var routes = require('./config/routes');
 app.use("/api", routes);
 
-app.listen(process.env.PORT || 3000)
+app.listen(3000)

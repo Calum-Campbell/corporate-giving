@@ -1,5 +1,5 @@
 angular
-  .module('cause-app')
+  .module('corporate-giving')
   .factory('User', User)
 
 User.$inject = ['$resource', 'API']
@@ -13,22 +13,6 @@ function User($resource, API){
       'query':     { method: 'GET', isArray: false},
       'remove':    { method: 'DELETE' },
       'delete':    { method: 'DELETE' },
-      'addProject': { 
-        url: API + '/users/:id/addproject',
-        method: 'PUT'
-      },
-      'removeProject': { 
-        url: API + '/users/:id/removeproject',
-        method: 'PUT'
-      },
-      'addTheme': { 
-        url: API + '/users/:id/addtheme',
-        method: 'PUT'
-      },
-      'removeTheme': { 
-        url: API + '/users/:id/removetheme',
-        method: 'PUT'
-      },
       'register': {
         url: API +'/register',
         method: "POST"

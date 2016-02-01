@@ -1,7 +1,7 @@
-var mongolab = process.env.MONGOLAB_URI;
+// var mongolab = process.env.MONGOLAB_URI;
 
 module.exports = {
   'secret': 'jsonwebtokensaregreat',
-  // 'database': 'mongodb://localhost:27017/cause-app'
-  'database': mongolab
+  'database': 'mongodb://localhost:27017/corporate-giving'
+  // 'database': mongolab
 };

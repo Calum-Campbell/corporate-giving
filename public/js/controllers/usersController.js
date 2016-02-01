@@ -1,5 +1,5 @@
 angular
-  .module('cause-app')
+  .module('corporate-giving')
   .controller('UsersController', UsersController);
 
 UsersController.$inject = ['User', 'TokenService', '$state', 'CurrentUser'];
@@ -37,7 +37,6 @@ function UsersController(User, TokenService, $state, CurrentUser){
     var token = res.token ? res.token : null;
     if (token) {
       getUsers();
-      $state.go('themes');
     }
     self.user = TokenService.decodeToken();
     CurrentUser.saveUser(self.user)
@@ -45,7 +44,6 @@ function UsersController(User, TokenService, $state, CurrentUser){
 
   // POSTS the new user to register to the API
   function register() {
-    console.log(self.user)
     User.register(self.user, handleLogin);
   }
 

@@ -1,5 +1,5 @@
 angular
-  .module('cause-app')
+  .module('corporate-giving')
   .service('TokenService', TokenService);
 
 TokenService.$inject = ['$window', 'jwtHelper'];

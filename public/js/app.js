@@ -1,6 +1,7 @@
 angular
-  .module('cause-app', ['ngResource', 'angular-jwt', 'ui.router'])
-  .constant('API', 'https://cause-app.herokuapp.com/api')
+  .module('corporate-giving', ['ngResource', 'angular-jwt', 'ui.router'])
+  // .constant('API', 'https://cause-app.herokuapp.com/api')
+  .constant('API', 'http://localhost:3000/api')
   .config(MainRouter)
   .config(function($httpProvider){
     $httpProvider.interceptors.push('authInterceptor')
@@ -15,43 +16,5 @@ angular
         url: "/",
         templateUrl: "home.html"
       })
-      .state('login', {
-        url: "/login",
-        templateUrl: "login.html"
-      })
-      .state('register', {
-        url: "/register",
-        templateUrl: "register.html"
-      })
-      .state('projects', {
-        url: "/projects",
-        templateUrl: "projects.html",
-        controller: "ProjectsController as projects"
-      })
-      .state('projectsShow', {
-        url: "/projects/:id",
-        templateUrl: "projectShow.html",
-        controller: "ProjectsController as projects"
-      })
-      .state('basket', {
-        url: "/basket",
-        templateUrl: "basket.html",
-        controller: "ProjectsController as projects"
-      })
-      .state('themes', {
-        url: "/themes",
-        templateUrl: "themes.html",
-        controller: "ThemesController as themes"
-      })
-      .state('creditCardForm', {
-        url: "/payment",
-        templateUrl: "creditCardForm.html",
-        controller: "ProjectsController as projects"
-      })
-      .state('blog', {
-        url: "/blog",
-        templateUrl: "blog.html"
-      })
-
     $urlRouterProvider.otherwise("/");
   }

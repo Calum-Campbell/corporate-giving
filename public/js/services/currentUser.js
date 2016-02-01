@@ -1,5 +1,5 @@
 angular
-  .module('cause-app')
+  .module('corporate-giving')
   .service('CurrentUser', CurrentUser);
 
 CurrentUser.$inject = ["TokenService"]

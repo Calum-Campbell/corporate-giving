@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="cause-app">
+<html ng-app="corporate-giving">
 <head>
-  <title>Cause</title>
+  <title>Corporate Giving</title>
   <!-- External Files -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-messages.js"></script>
@@ -10,7 +10,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
   <script src="//cdn.jsdelivr.net/satellizer/0.13.1/satellizer.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
+
 
 
 
@@ -21,11 +21,7 @@
   <script type="text/javascript" src="./js/services/authInterceptor.js"></script>
   <script type="text/javascript" src="./js/services/currentUser.js"></script>
   <script type="text/javascript" src="./js/models/user.js"></script>
-  <script type="text/javascript" src="./js/models/project.js"></script>
-  <script type="text/javascript" src="./js/models/theme.js"></script>
   <script type="text/javascript" src="./js/controllers/usersController.js"></script>
-  <script type="text/javascript" src="./js/controllers/projectsController.js"></script>
-  <script type="text/javascript" src="./js/controllers/themesController.js"></script>
 
   <!-- BOOTSTRAP FIX -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -39,57 +35,8 @@
   <!-- Stylesheets -->
   <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/projects.css">
-  <link rel="stylesheet" href="./css/home.css">
-  <link rel="stylesheet" href="./css/projectShow.css">
-  <link rel="stylesheet" href="./css/themes.css">
-  <link rel="stylesheet" href="./css/googleMap.css">
-  <link rel="stylesheet" href="./css/basket.css">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 
-<body ng-controller="UsersController as users">
-  <!-- Header -->
-  <header >
-    <nav>
-      <h1>Cause</h1>
-    </nav>
-  </header>
-  <main ui-view></main>
-  <footer ng-show="users.checkLoggedIn()" class="footer footer-logged-in">
-    <a href="#" ui-sref="projects" ui-sref-active="active-footer">
-      <div class="footer-1" >
-        <img src="/assets/images/home.png">
-        <p>Discover</p>
-      </div>
-    </a>
-    <a href="#" ui-sref="themes" ui-sref-active="active-footer">
-      <div class="footer-1">
-        <img src="/assets/images/tag.png">
-        <p>Tags</p>
-      </div>
-    </a>
-    <a href="#" ui-sref="basket" ui-sref-active="active-footer">
-      <div class="footer-1">
-        <img src="/assets/images/donate.png">
-        <p>Donate</p>
-      </div>
-    </a>
-    <a href="#" ui-sref="blog"ui-sref-active="active-footer">
-      <div class="footer-1">
-        <img src="/assets/images/blog.png">
-        <p>Blog</p>
-      </div>
-    </a>
-    <a href="#" ui-sref="home" ng-click="users.logout()" ui-sref-active="active-footer">
-      <div class="footer-1">
-        <img src="/assets/images/logout.png">
-        <p>Leave</p>
-      </div>
-    </a>
-  </footer>
-  <footer ng-show="!users.checkLoggedIn()" class="footer row container-fluid footer-not-logged">
-    <p>Everything you care about, in one place</p>
-  </footer>
+<body>
 </body>
 </html>
