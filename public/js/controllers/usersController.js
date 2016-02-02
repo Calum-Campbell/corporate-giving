@@ -37,6 +37,7 @@ function UsersController(User, TokenService, $state, CurrentUser){
     var token = res.token ? res.token : null;
     if (token) {
       getUsers();
+      $state.go('dashboard');
     }
     self.user = TokenService.decodeToken();
     CurrentUser.saveUser(self.user)

@@ -20,5 +20,9 @@ angular
         url: "/login",
         templateUrl: "login.html"
       })
+      .state('dashboard', {
+        url: "/dashboard",
+        templateUrl: "dashboard.html"
+      })
     $urlRouterProvider.otherwise("/");
   }
