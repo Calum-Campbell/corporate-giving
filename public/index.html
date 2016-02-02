@@ -24,42 +24,52 @@
 
 <body ng-controller="UsersController as users">
   <!-- Login form -->
-  <section ng-hide="users.checkLoggedIn()">
-    <form  role="form" name="users.loginForm" ng-submit="users.login()">
-      <legend>Login</legend>
+  
+    <div class="home-form" ng-hide="users.checkLoggedIn()">
+      <form role="form" name="users.loginForm" ng-submit="users.login()" novalidate class="form-group">
+        <legend>Login</legend>
 
-      <div >
-        <label for="email">Email</label>
-        <input type="text" name="email" placeholder="Enter your email" ng-model="users.user.email" required>
-      </div>
+        <div >
+          <label for="email">Email</label>
+          <input type="text" name="email" placeholder="Enter your email" ng-model="users.user.email" required class="form-control">
+        </div>
 
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Enter your password" ng-model="users.user.password" required>
-      </div>
-      <div>
-        <button type="submit" >Login</button>
-      </div>
-    </form>
-  </section>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" placeholder="Enter your password" ng-model="users.user.password" required class="form-control">
+        </div>
 
-  <!-- Register form -->
-  <section ng-hide="users.checkLoggedIn()">
-    <form name="users.registerForm"ng-submit="users.register()">
+        <div>
+          <button type="submit" class="btn btn-secondary form-button">Login</button>
+        </div>
+        <p>Not a user? <a href="" ng-click="showme=true"><i>register here</i></a></p>
+      </form>
+    </div>
+  </div>
+  <!-- Register form Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
+
+  <div ng-show="showme" ng-hide="users.checkLoggedIn()">
+    <form class="form-group" name="users.registerForm" ng-submit="users.register()" novalidate>
 
       <legend>Register</legend>
 
-      
-      <label for="email">Email</label>
-      <input type="text" name="email" placeholder="Email" ng-model="users.user.email" required>
+      <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" placeholder="Email" ng-model="users.user.email" class="form-control" required>
+      </div>
 
-      <label for="password">Password</label>
-      <input type="password" name="password" placeholder="Password" ng-model="users.user.password" required>
+      <div >
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Password" ng-model="users.user.password" required class="form-control">
+      </div>
 
-      <button type="submit" class="pure-button pure-button-primary">Register</button>
-
+      <div>
+        <button type="submit" >Register</button>
+        <p>Already a user? <a href="" ng-click="showme=false"><i>login here</i></a></p>
+      </div>
     </form>
-  </section>
+  </div>
+
 
   <div class="message" ng-show="users.checkLoggedIn()">LOGGED IN
   <button ng-click='users.logout()'>Logout</button>
