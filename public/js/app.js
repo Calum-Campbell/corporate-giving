@@ -14,7 +14,11 @@ angular
     $stateProvider
       .state('home', {
         url: "/",
-        templateUrl: "index.html"
+        templateUrl: "home.html"
+      })
+      .state('login', {
+        url: "/login",
+        templateUrl: "login.html"
       })
     $urlRouterProvider.otherwise("/");
   }

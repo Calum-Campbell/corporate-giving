@@ -26,7 +26,6 @@
 </head>
 
 <body ng-controller="UsersController as users">
-
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -37,64 +36,18 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Cause</a>
+        <a class="navbar-brand" href="#" ui-sref="home">Cause</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">About</a></li>
-        <li><a href="#">Login</a></li>
+        <li><a href="#" ui-sref="login">Login</a></li>
 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
-
-<!-- Login form -->
-
-<div class="home-form" ng-hide="users.checkLoggedIn()">
-  <form role="form" name="users.loginForm" ng-submit="users.login()" novalidate class="form-group">
-    <legend>Login</legend>
-
-    <div >
-      <label for="email">Email</label>
-      <input type="text" name="email" placeholder="Enter your email" ng-model="users.user.email" required class="form-control">
-    </div>
-
-    <div>
-      <label for="password">Password</label>
-      <input type="password" name="password" placeholder="Enter your password" ng-model="users.user.password" required class="form-control">
-    </div>
-
-    <div>
-      <button type="submit" class="btn btn-secondary form-button">Login</button>
-    </div>
-    <p>Not a user? <a href="" ng-click="showme=true"><i>register here</i></a></p>
-  </form>
-</div>
-</div>
-<!-- Register form Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
-
-<div ng-show="showme" ng-hide="users.checkLoggedIn()">
-  <form class="form-group" name="users.registerForm" ng-submit="users.register()" novalidate>
-
-    <legend>Register</legend>
-
-    <div>
-      <label for="email">Email</label>
-      <input type="text" name="email" placeholder="Email" ng-model="users.user.email" class="form-control" required>
-    </div>
-
-    <div >
-      <label for="password">Password</label>
-      <input type="password" name="password" placeholder="Password" ng-model="users.user.password" required class="form-control">
-    </div>
-
-    <div>
-      <button type="submit" >Register</button>
-      <p>Already a user? <a href="" ng-click="showme=false"><i>login here</i></a></p>
-    </div>
-  </form>
-</div>
+<main ui-view></main>
 
 
 <div class="message" ng-show="users.checkLoggedIn()">
