@@ -25,4 +25,3 @@ function User($resource, API){
   );
 }
 
-//change
