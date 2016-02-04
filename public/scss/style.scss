@@ -1,3 +1,10 @@
+$primaryColor:#6FC8B8;
+$secondaryColor: $primaryColor - 100;
+
 .title {
-  color: blue;
+  color: $primaryColor;
+}
+
+.sub-title{
+  color: $secondaryColor;
 }
