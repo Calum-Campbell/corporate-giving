@@ -20,11 +20,18 @@
     "method-override": "^1.0.2",
     "mongoose": "4.1.1",
     "morgan": "~1.0.0",
+    "node-sass": "^3.4.2",
     "passport": "^0.2.0",
     "passport-local": "~0.1.6",
     "request-promise": "^1.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "css-loader": "^0.23.1",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Calum-Campbell/cause-project.git"

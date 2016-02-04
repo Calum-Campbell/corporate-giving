@@ -23,6 +23,8 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href='./bower_components/bootstrap/dist/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./scss/style.css">
+
 </head>
 
 <body ng-controller="UsersController as users">
@@ -34,8 +36,9 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">About</a></li>
+        <li><a href="#" ng-show="users.checkLoggedIn()" ui-sref="dashboard" ui-sref="dashboard">Dashboard</a></li>
         <li><a href="#" ng-show="!users.checkLoggedIn()" ui-sref="login">Login</a></li>
-        <li><a href="#" ng-show="users.checkLoggedIn()" ui-sref="login" ui-sref="dashboard" ng-click="users.logout()">Logout</a></li>
+        <li><a href="#" ng-show="users.checkLoggedIn()" ui-sref="login" ng-click="users.logout()">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
