@@ -27,7 +27,6 @@ function UsersController(User, TokenService, $state, CurrentUser){
   function getUser(){
     self.user = TokenService.decodeToken();
     User.get({id: self.user._id}, function(data){
-      console.log(data.user)
       self.user = data.user
      })
     };
@@ -71,6 +70,8 @@ function UsersController(User, TokenService, $state, CurrentUser){
   if (CurrentUser.getUser()) {
     getUser();
   }
+
+self.getUsers();
 
 return self
 }

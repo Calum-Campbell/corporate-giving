@@ -3,17 +3,14 @@ var Charity    = require('../models/charity');
 function charitiesIndex(req, res) {
   Charity.find(function(err, charity){
     if (err) return res.status(404).json({message: 'Something went wrong.'});
-    res.status(200).json({ charity: charity });
+    res.status(200).send(charity);
   });
 }
 
 function charitiesCreate(req, res){
   console.log(req.body)
-  var newCharity = new Charity();
-  newCharity.local.name  = req.body.name;
-  newCharity.local.votes = [];
-   
-  newCharity.save(function(err, charity){
+  var charity = new Charity(req.body);
+  charity.save(function(err){
    if (err) return res.status(500).json({message: "Something went wrong!"});
    res.status(201).json({message: 'Charity successfully added.', charity: charity});
   });

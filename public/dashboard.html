@@ -1,2 +1,11 @@
 <h1>DASHBOARD</h1>
-<div class='graph'>Graph Area</div>
+<div class=" container-fluid col-xs-4 col-lg-6 users" ng-repeat="user in users.all">
+  <h2>{{user.local.email}}</h2>
+</div>
+
+<div ng-controller="CharitiesController as charities">
+<div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all">
+    <h2>{{charity}}</h2>
+  </div>
+
+</div>
