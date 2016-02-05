@@ -1,5 +1,8 @@
+@import './partials/_reset';
+
 $primaryColor:#6FC8B8;
 $secondaryColor: $primaryColor - 100;
+
 
 .title {
   color: $primaryColor;
