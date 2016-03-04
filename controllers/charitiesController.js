@@ -8,7 +8,6 @@ function charitiesIndex(req, res) {
 }
 
 function charitiesCreate(req, res){
-  console.log(req.body)
   var charity = new Charity(req.body);
   charity.save(function(err){
    if (err) return res.status(500).json({message: "Something went wrong!"});
@@ -46,10 +45,24 @@ function charitiesDelete(req, res){
  });
 }
 
+function charitiesAddVote(req, res){
+  var charityId = req.params.id;
+  Charity.findOne({_id: charityId}, function(err, charity){
+      charity.votes.push(1);
+      console.log(charity);
+      charity.save(function(err){
+        if (err) return res.status(500).json({message: "Something went wrong!"});
+
+        res.status(201).json({message: 'Added a vote to DA charity.', charity: charity});
+      });
+  });
+}
+
 module.exports = {
   charitiesIndex:  charitiesIndex,
   charitiesCreate: charitiesCreate,
   charitiesShow:   charitiesShow,
   charitiesUpdate: charitiesUpdate,
-  charitiesDelete: charitiesDelete
+  charitiesDelete: charitiesDelete,
+  charitiesAddVote: charitiesAddVote
 }

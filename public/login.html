@@ -24,7 +24,7 @@
 </div>
 <!-- Register form Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-->
 
-<div ng-show="showme" ng-hide="users.checkLoggedIn()">
+<div ng-show="showme" ng-show="users.checkLoggedIn()">
   <form class="form-group" name="users.registerForm" ng-submit="users.register()" novalidate>
 
     <legend>Register</legend>

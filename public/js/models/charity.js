@@ -12,6 +12,10 @@ function Charity($resource, API){
       'query':     { method: 'GET', isArray: true},
       'remove':    { method: 'DELETE' },
       'delete':    { method: 'DELETE' },
+    'addVote': {
+      url: API + '/charities/:id/addVote',
+      method: 'PUT'
     }
+  }
   );
 }

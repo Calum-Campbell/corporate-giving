@@ -30,5 +30,8 @@ router.route('/charities/:id')
   .patch(charitiesController.charitiesUpdate)
   .delete(charitiesController.charitiesDelete)
 
+router.route('/charities/:id/addVote')
+  .put(charitiesController.charitiesAddVote)
+
 
 module.exports = router;
