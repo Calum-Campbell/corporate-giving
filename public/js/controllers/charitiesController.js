@@ -53,10 +53,10 @@ angular
    };
 
    self.ui = function(){
-    $( "#slider-2" ).slider({
+    $( ".slider" ).slider({
        value: 60,
        animate:"slow",
-       orientation: "vertical"
+       orientation: "vertical",
       });
     }
 
