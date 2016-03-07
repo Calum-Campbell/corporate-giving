@@ -11,8 +11,9 @@ angular
    self.users           = [];
    self.user            = {};
    self.userCharities   = [];
-   self.selectedCharity = {}
+   self.selectedCharity = {};
    self.charity         = {};
+
 
    self.getUsers = function(){
      User.query(function(data){
@@ -40,7 +41,6 @@ angular
         charityId : charity._id
       }
       Charity.addVote({id: charity._id}, data,function(charity){
-        console.log("hell");
       });
    };
 
@@ -52,9 +52,18 @@ angular
     })
    };
 
+   self.ui = function(){
+    $( "#slider-2" ).slider({
+       value: 60,
+       animate:"slow",
+       orientation: "vertical"
+      });
+    }
+
  
 
    self.getCharities();
    self.getUser();
    self.getUsers();
+   self.ui();
   }

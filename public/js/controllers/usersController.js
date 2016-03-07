@@ -14,6 +14,14 @@ function UsersController(User, TokenService, $state, CurrentUser){
   self.login         = login;
   self.logout        = logout;
   self.checkLoggedIn = checkLoggedIn;
+  
+  self.slider = {
+   value: 150,
+    options: {
+      floor: 0,
+      ceil: 450
+    }
+  };
 
 
   // GETs all the users from the api
