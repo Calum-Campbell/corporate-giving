@@ -1,4 +1,3 @@
-
 angular
   .module('corporate-giving')
   .controller('CharitiesController', CharitiesController);
@@ -35,14 +34,17 @@ angular
    }; 
 
    //Voting with Charities
-   self.addVoteToCharity = function (charity){
-      charity.votes.push(1);
-      var data = {
-        charityId : charity._id
-      }
-      Charity.addVote({id: charity._id}, data,function(charity){
-      });
+   self.addVoteToCharity = function (charity, amount){
+    charity.votes.push(amount);
+    var data = {
+      charityId : charity._id
+    }
+    Charity.addVote({id: charity._id, amount:amount}, function(charity){
+    });
    };
+
+
+
 
    if ($stateParams.id) charityShow();
 
@@ -54,16 +56,28 @@ angular
 
    self.ui = function(){
     $( ".slider" ).slider({
-       value: 60,
-       animate:"slow",
-       orientation: "vertical",
+      orientation: "vertical",
+      range: "min",
+      min: 0,
+      max: 100,
+      value: 60,
+      slide: function( event, ui ) {
+              $( "#donate" ).val( ui.value );
+              self.checkCredit(ui.value);
+            }
       });
-    }
+    };
+
+    self.checkCredit = function(value){
+      var userCredit = self.user.local.credit;
+      var remainingCredit = (userCredit - value);
+      $( "#left" ).val( remainingCredit );
+
+    };
 
  
-
+   self.ui();
    self.getCharities();
    self.getUser();
    self.getUsers();
-   self.ui();
   }

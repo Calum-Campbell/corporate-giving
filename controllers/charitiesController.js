@@ -47,9 +47,9 @@ function charitiesDelete(req, res){
 
 function charitiesAddVote(req, res){
   var charityId = req.params.id;
+  var amount = req.body.amount;
   Charity.findOne({_id: charityId}, function(err, charity){
-      charity.votes.push(1);
-      console.log(charity);
+      charity.votes.push(amount);
       charity.save(function(err){
         if (err) return res.status(500).json({message: "Something went wrong!"});
 

@@ -3,18 +3,30 @@
   <h2>{{user.local.email}}</h2>
 </div> -->
 
-  <div ng-controller="CharitiesController as charities">
-    <div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all">
-        <h2>{{charity.name}}</h2>
-        <h2>{{charity.votes.length}}</h2>
-        <button ng-click="charities.addVoteToCharity(charity)">Vote</button>  
+<div class="dashboardMainArea" ng-controller="CharitiesController as charities">
+  <div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all">
+    <h2>{{charity.name}}</h2>
+    <h2>{{charity.votes.length}}</h2>
+    <!-- <button ng-click="charities.addVoteToCharity(charity)">Vote</button>   -->
   </div>
 </div>
 
-<div class="container-fluid col-xs-4 col-lg-6 votingPanel">
-  <div class="slider"></div>
-  <div class="slider"></div>
-  <div class="slider"></div>
-  <div class="slider"></div>
-  
+<div class="votingPanel" ng-controller="CharitiesController as charities">
+<h1>Voting Area</h1>
+  <div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all">
+    <h2>{{charity.name}}</h2>
+    <input placeholder="0" ng-model='charity.vote'></input>
+    <button ng-click="charities.addVoteToCharity(charity,charity.vote)">Vote</button>  
+  </div>
 </div>
+
+<h1> w</h1>
+<h1> w</h1>
+<h1> w</h1>
+<h1> w</h1>
+<h1> w</h1>
+<h1>credit left:</h1><input id="left"></input>
+<h1>donate:</h1><input id="donate"></input>
+<div class="slider"></div>
+
+
