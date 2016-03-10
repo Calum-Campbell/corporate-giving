@@ -34,18 +34,25 @@ angular
    }; 
 
    //Voting with Charities
-   self.addVoteToCharity = function (charity, amount){
-    console.log(charity)
-    console.log(amount)
-    console.log(self.user)
-    charity.votes.push(amount);
-    self.user.local.credit -= amount;
-    self.checkCredit();
+   self.addVoteToCharity = function (firstVote,secondVote,thirdVote,fourthVote){
+    console.log(self.all[0])
 
-    Charity.addVote({id: charity._id, amount:amount}, function(charity){
+
+    Charity.addVote({id: self.all[0]._id, amount:firstVote}, function(charity){
     });
+    User.usersRemoveCredit({id: self.user._id, vote:firstVote})
 
-    User.usersRemoveCredit({id: self.user._id, vote:amount})
+    Charity.addVote({id: self.all[1]._id, amount:secondVote}, function(charity){
+    });
+    User.usersRemoveCredit({id: self.user._id, vote:secondVote})
+
+    Charity.addVote({id: self.all[2]._id, amount:thirdVote}, function(charity){
+    });
+    User.usersRemoveCredit({id: self.user._id, vote:thirdVote})
+
+    Charity.addVote({id: self.all[3]._id, amount:fourthVote}, function(charity){
+    });
+    User.usersRemoveCredit({id: self.user._id, vote:fourthVote})
    
    };
 

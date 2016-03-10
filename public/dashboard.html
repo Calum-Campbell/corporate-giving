@@ -12,15 +12,25 @@
 
 <div class="votingPanel" ng-controller="CharitiesController as charities">
 <h1>Voting Area</h1>
-<h1 id="left">credit left:{{users.user.local.credit}}</h1>
+<h1 id="left">credit left:{{users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote}}</h1>
 
-  <!-- <div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all | limitTo:1"> -->
-  <div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all">
-    <h2>{{charity.name}}</h2>
-    <h1>donate:</h1><input ng-model='charityVote' id="donate"></input>
-    <button ng-click="charities.addVoteToCharity(charity,charityVote)">Vote</button>  
-  </div>
-</div>
+<form role="form"  ng-submit="charities.addVoteToCharity(firstVote, secondVote, thirdVote, fourthVote)" novalidate class="form-group">
+    <h2>{{charities.all[0].name}}</h2>
+    <h1>donate:</h1><input ng-model='firstVote' id="donate"></input>
+
+    <h2>{{charities.all[1].name}}</h2>
+    <h1>donate:</h1><input ng-model='secondVote' id="donate"></input>
+
+    <h2>{{charities.all[2].name}}</h2>
+    <h1>donate:</h1><input ng-model='thirdVote' id="donate"></input>
+
+    <h2>{{charities.all[3].name}}</h2>
+    <h1>donate:</h1><input ng-model='fourthVote' id="donate"></input>
+
+  <button type="submit" class="form-button">Vote</button>
+
+</form>
+
 <!-- 
 <h1> w</h1>
 <h1> w</h1>
