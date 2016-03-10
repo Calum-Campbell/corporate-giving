@@ -4,6 +4,7 @@ var express = require('express'),
 var usersController = require('../controllers/usersController');
 var authenticationsController = require('../controllers/authenticationsController');
 var charitiesController = require('../controllers/charitiesController');
+var companiesController = require('../controllers/companiesController');
 
 router.post('/login', authenticationsController.login);
 router.post('/register', authenticationsController.register);
@@ -38,5 +39,15 @@ router.route('/charities/:id')
 router.route('/charities/:id/addVote')
   .put(charitiesController.charitiesAddVote)
 
+
+//Companies Routes
+router.route('/companies')
+  .get(companiesController.companiesIndex)
+  .post(companiesController.companiesCreate)
+
+router.route('/companies/:id') 
+  .get(companiesController.companiesShow)
+  .patch(companiesController.companiesUpdate)
+  .delete(companiesController.companiesDelete)
 
 module.exports = router;
