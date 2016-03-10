@@ -7,6 +7,7 @@ module.exports = function(passport) {
     usernameField: "email",
     passwordField: "password",
     credit: "credit",
+    company: "company",
     passReqToCallback: true,
   }, function(req, email, password, done) {
 
@@ -21,6 +22,7 @@ module.exports = function(passport) {
       var newUser            = new User();
       newUser.local.email    = email;
       newUser.local.credit   = 100;
+      newUser.local.company  = req.body.company;
       newUser.local.username = req.body.username;
       newUser.local.password = User.encrypt(password);
 
