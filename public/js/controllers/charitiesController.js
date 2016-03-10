@@ -35,24 +35,27 @@ angular
 
    //Voting with Charities
    self.addVoteToCharity = function (firstVote,secondVote,thirdVote,fourthVote){
-    console.log(self.all[0])
+    console.log(firstVote)
 
-
-    Charity.addVote({id: self.all[0]._id, amount:firstVote}, function(charity){
+    var firstVote = parseInt(firstVote);
+    if(firstVote === parseInt(firstVote, 10)){
+      console.log("jello")
+    Charity.addVote({id: self.all[0]._id, amount:parseInt(firstVote)}, function(charity){
     });
-    User.usersRemoveCredit({id: self.user._id, vote:firstVote})
+    User.usersRemoveCredit({id: self.user._id, vote:parseInt(firstVote)})
+  }
 
-    Charity.addVote({id: self.all[1]._id, amount:secondVote}, function(charity){
+    Charity.addVote({id: self.all[1]._id, amount:parseInt(secondVote)}, function(charity){
     });
-    User.usersRemoveCredit({id: self.user._id, vote:secondVote})
+    User.usersRemoveCredit({id: self.user._id, vote:parseInt(secondVote)})
 
-    Charity.addVote({id: self.all[2]._id, amount:thirdVote}, function(charity){
+    Charity.addVote({id: self.all[2]._id, amount:parseInt(thirdVote)}, function(charity){
     });
-    User.usersRemoveCredit({id: self.user._id, vote:thirdVote})
+    User.usersRemoveCredit({id: self.user._id, vote:parseInt(thirdVote)})
 
-    Charity.addVote({id: self.all[3]._id, amount:fourthVote}, function(charity){
+    Charity.addVote({id: self.all[3]._id, amount:parseInt(fourthVote)}, function(charity){
     });
-    User.usersRemoveCredit({id: self.user._id, vote:fourthVote})
+    User.usersRemoveCredit({id: self.user._id, vote:parseInt(fourthVote)})
    
    };
 
@@ -76,28 +79,57 @@ angular
     })
    };
 
-   self.ui = function(){
-    $( ".slider" ).slider({
-      orientation: "vertical",
-      range: "min",
-      min: 0,
-      max: 100,
-      value: 60,
-      slide: function( event, ui ) {
-              $( "#donate" ).val( ui.value );
-              self.checkCredit(ui.value);
-            }
-      });
-    };
+   // self.ui = function(){
+   //  $( ".slider0" ).slider({
+   //    range: "min",
+   //    min: 0,
+   //    max: 100,
+   //    value: 60,
+   //    slide: function( event, ui ) {
+   //            $( "#slider0" ).val( ui.value );
+   //            // self.checkCredit(ui.value);
+   //          }
+   //    });
+   //  $( ".slider1" ).slider({
+   //    range: "min",
+   //    min: 0,
+   //    max: 100,
+   //    value: 60,
+   //    slide: function( event, ui ) {
+   //            $( "#slider1" ).val( ui.value );
+   //            // self.checkCredit(ui.value);
+   //          }
+   //    });
+   //  $( ".slider2" ).slider({
+   //    range: "min",
+   //    min: 0,
+   //    max: 100,
+   //    value: 60,
+   //    slide: function( event, ui ) {
+   //            $( "#slider2" ).val( ui.value );
+   //            // self.checkCredit(ui.value);
+   //          }
+   //    });
+   //  $( ".slider3" ).slider({
+   //    range: "min",
+   //    min: 0,
+   //    max: 100,
+   //    value: 60,
+   //    slide: function( event, ui ) {
+   //            $( "#slider3" ).val( ui.value );
+   //            // self.checkCredit(ui.value);
+   //          }
+   //    });
+   //  };
 
-    self.checkCredit = function(value){
-      var userCredit = self.user.local.credit;
-      var remainingCredit = (userCredit - value);
-      $( "#left" ).val( remainingCredit );
-    };  
+    // self.checkCredit = function(value){
+    //   var userCredit = self.user.local.credit;
+    //   var remainingCredit = (userCredit - value);
+    //   $( "#left" ).val( remainingCredit );
+    // };  
 
  
-   self.ui();
+   // self.ui();
    self.getCharities();
    self.getUser();
    self.getUsers();
