@@ -35,15 +35,30 @@ angular
 
    //Voting with Charities
    self.addVoteToCharity = function (charity, amount){
+    console.log(charity)
+    console.log(amount)
+    console.log(self.user)
     charity.votes.push(amount);
-    var data = {
-      charityId : charity._id
-    }
+    self.user.local.credit -= amount;
+    self.checkCredit();
+
     Charity.addVote({id: charity._id, amount:amount}, function(charity){
     });
+
+    User.usersRemoveCredit({id: self.user._id, vote:amount})
+   
    };
 
-
+   self.getTotalVotes = function(charity){
+    var voteArray = charity.votes;
+    var total = 0;
+    $.each(voteArray,function() {
+        total += this;
+    });
+    // console.log(total)
+    self.charity.total = total;
+    return total;
+   };
 
 
    if ($stateParams.id) charityShow();
@@ -72,8 +87,7 @@ angular
       var userCredit = self.user.local.credit;
       var remainingCredit = (userCredit - value);
       $( "#left" ).val( remainingCredit );
-
-    };
+    };  
 
  
    self.ui();

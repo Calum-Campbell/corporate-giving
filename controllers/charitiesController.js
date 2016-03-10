@@ -47,7 +47,7 @@ function charitiesDelete(req, res){
 
 function charitiesAddVote(req, res){
   var charityId = req.params.id;
-  var amount = req.body.amount;
+  var amount = parseInt(req.body.amount);
   Charity.findOne({_id: charityId}, function(err, charity){
       charity.votes.push(amount);
       charity.save(function(err){
@@ -57,6 +57,7 @@ function charitiesAddVote(req, res){
       });
   });
 }
+
 
 module.exports = {
   charitiesIndex:  charitiesIndex,

@@ -20,6 +20,10 @@ function User($resource, API){
       'login':      {
         url: API + '/login',
         method: "POST"
+      },
+      'usersRemoveCredit': {
+        url: API + '/users/:id/removeCredit',
+        method: 'PATCH'
       }
     }
   );

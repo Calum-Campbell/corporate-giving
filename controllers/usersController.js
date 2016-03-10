@@ -37,9 +37,33 @@ function usersDelete(req, res){
  });
 }
 
+function usersRemoveCredit(req,res){
+  console.log("hello")
+  User.findById(req.params.id,  function(err, user) {
+    if(req.body.vote) user.local.credit -= req.body.vote
+
+    user.save(function(err){
+      if (err) return res.status(500).json({message: "Something went wrong!"});
+
+      res.status(201).json({message: 'User successfully updated.', user: user});
+    })
+  })
+}
+
 module.exports = {
   usersIndex:  usersIndex,
   usersShow:   usersShow,
   usersUpdate: usersUpdate,
-  usersDelete: usersDelete
+  usersDelete: usersDelete,
+  usersRemoveCredit: usersRemoveCredit
 }
+
+
+
+
+
+
+
+
+
+

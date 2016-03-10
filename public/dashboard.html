@@ -2,24 +2,25 @@
 <!-- <div class=" container-fluid col-xs-4 col-lg-6 users" ng-repeat="user in users.all">
   <h2>{{user.local.email}}</h2>
 </div> -->
-
+<h1>User Credits:  {{users.user.local.credit}}</h1>
 <div class="dashboardMainArea" ng-controller="CharitiesController as charities">
   <div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all">
     <h2>{{charity.name}}</h2>
-    <h2>{{charity.votes.length}}</h2>
+    <h2>{{charities.getTotalVotes(charity)}}</h2>
     <!-- <button ng-click="charities.addVoteToCharity(charity)">Vote</button>   -->
   </div>
 </div>
 
 <div class="votingPanel" ng-controller="CharitiesController as charities">
 <h1>Voting Area</h1>
-  <div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all">
+  <div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all | limitTo:1">
     <h2>{{charity.name}}</h2>
-    <input placeholder="0" ng-model='charity.vote'></input>
-    <button ng-click="charities.addVoteToCharity(charity,charity.vote)">Vote</button>  
+    <h1 id="left">credit left:{{users.user.local.credit}}</h1>
+    <h1>donate:</h1><input ng-model='charityVote' id="donate"></input>
+    <button ng-click="charities.addVoteToCharity(charity,charityVote)">Vote</button>  
   </div>
 </div>
-
+<!-- 
 <h1> w</h1>
 <h1> w</h1>
 <h1> w</h1>
@@ -28,5 +29,5 @@
 <h1>credit left:</h1><input id="left"></input>
 <h1>donate:</h1><input id="donate"></input>
 <div class="slider"></div>
-
+ -->
 

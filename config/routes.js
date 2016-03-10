@@ -20,6 +20,11 @@ router.route('/users/:id')
   .patch(usersController.usersUpdate)
   .delete(usersController.usersDelete)
 
+router.route('/users/:id/removeCredit')
+ .patch(usersController.usersRemoveCredit)
+
+
+
 //Charities Routes
 router.route('/charities')
   .get(charitiesController.charitiesIndex)
