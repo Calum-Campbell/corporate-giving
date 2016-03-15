@@ -3,42 +3,45 @@
   <h2>{{user.local.email}}</h2>
 </div> -->
 <div class="dashboardMainArea" ng-controller="CharitiesController as charities">
+  <div id='pieChart'></div>
   <div class=" container-fluid col-xs-4 col-lg-6" ng-repeat="charity in charities.all">
     <h2>{{charity.name}}</h2>
     <h2>{{charities.getTotalVotes(charity)}}</h2>
     <!-- <button ng-click="charities.addVoteToCharity(charity)">Vote</button>   -->
   </div>
+  <div class="votingPanel">
+    <h1>Voting Area</h1>
+    <h1 id="left" ng-class="{red: users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote <0}">credit left:{{users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote}}</h1>
+
+    <form role="form"  ng-submit="charities.addVoteToCharity(firstVote, secondVote, thirdVote, fourthVote)" novalidate class="form-group">
+      <h2>{{charities.all[0].name}}</h2>
+      <h1>donate:</h1><input ng-model='firstVote' id="slider0" placeholder="0"></input>
+      <!-- <div class="slider0"></div> -->
+
+      <h2>{{charities.all[1].name}}</h2>
+      <h1>donate:</h1><input ng-model='secondVote' id="slider1" placeholder="0"></input>
+      <!-- <div class="slider1"></div> -->
+
+
+      <h2>{{charities.all[2].name}}</h2>
+      <h1>donate:</h1><input ng-model='thirdVote' id="slider2" placeholder="0"></input>
+      <!-- <div class="slider2"></div> -->
+
+
+      <h2>{{charities.all[3].name}}</h2>
+      <h1>donate:</h1><input ng-model='fourthVote' id="slider3" placeholder="0"></input>
+      <!-- <div class="slider3"></div> -->
+
+
+      <button ng-if='users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote === 0' type="submit" class="form-button">Vote</button>
+      <h1 ng-if='users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote < 0'>Used too much credit, re-distribute your votes!</h1>
+      <h1 ng-if='users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote > 0'>You still have {{users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote}} credits left to distribute!</h1>
+
+
+    </form>
+  </div>
 </div>
 
-<div class="votingPanel" ng-controller="CharitiesController as charities">
-<h1>Voting Area</h1>
-<h1 id="left" ng-class="{red: users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote <0}">credit left:{{users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote}}</h1>
-
-<form role="form"  ng-submit="charities.addVoteToCharity(firstVote, secondVote, thirdVote, fourthVote)" novalidate class="form-group">
-    <h2>{{charities.all[0].name}}</h2>
-    <h1>donate:</h1><input ng-model='firstVote' id="slider0" placeholder="0"></input>
-    <!-- <div class="slider0"></div> -->
-
-    <h2>{{charities.all[1].name}}</h2>
-    <h1>donate:</h1><input ng-model='secondVote' id="slider1" placeholder="0"></input>
-    <!-- <div class="slider1"></div> -->
-
-
-    <h2>{{charities.all[2].name}}</h2>
-    <h1>donate:</h1><input ng-model='thirdVote' id="slider2" placeholder="0"></input>
-    <!-- <div class="slider2"></div> -->
-
-
-    <h2>{{charities.all[3].name}}</h2>
-    <h1>donate:</h1><input ng-model='fourthVote' id="slider3" placeholder="0"></input>
-    <!-- <div class="slider3"></div> -->
-
-
-  <button ng-if='users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote > 0' type="submit" class="form-button">Vote</button>
-  <h1 ng-if='users.user.local.credit - firstVote - secondVote - thirdVote - fourthVote < 0'>Used too much credit, re-distribute your votes!</h1>
-
-
-</form>
 
 <!-- 
 <h1> w</h1>
@@ -49,5 +52,5 @@
 <h1>credit left:</h1><input id="left"></input>
 <h1>donate:</h1><input id="donate"></input>
 <div class="slider"></div>
- -->
+-->
 
