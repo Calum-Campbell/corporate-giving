@@ -9,6 +9,7 @@
     <h2>{{charities.getTotalVotes(charity)}}</h2>
     <!-- <button ng-click="charities.addVoteToCharity(charity)">Vote</button>   -->
   </div>
+
   <div class="votingPanel">
     <h1>Voting Area</h1>
     <h1 id="left" ng-class="{red: users.user.local.credit - slider0.value - slider1.value - slider2.value - slider3.value <0}">credit left:{{users.user.local.credit - slider0.value - slider1.value - slider2.value - slider3.value}}</h1>
@@ -19,8 +20,9 @@
       <div>
           <rzslider rz-slider-model='slider0.value' 
                     rz-slider-options="{
-                    floor: 0, 
-                    ceil: 100
+                    floor: 0,
+                    ceil: 100,
+                    onStart:0
                     }"></rzslider>
       </div>
 
@@ -39,7 +41,7 @@
       <div>
           <rzslider rz-slider-model='slider2.value' 
                     rz-slider-options="{
-                    floor: 0, 
+                    floor: 0,
                     ceil: 100
                     }"></rzslider>
       </div>
@@ -49,7 +51,7 @@
       <div>
           <rzslider rz-slider-model='slider3.value' 
                     rz-slider-options="{
-                    floor: 0, 
+                    floor: 0,
                     ceil: 100
                     }"></rzslider>
       </div>

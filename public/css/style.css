@@ -31,16 +31,14 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.ui-slider {
-  width: 300px; }
-
 .votingPanel {
   background: yellow; }
   .votingPanel .red {
     color: red; }
 
 .dashboardMainArea {
-  display: inline-block; }
+  display: inline-block;
+  width: 100%; }
 
 body {
   font-family: 'Roboto', sans-serif; }
