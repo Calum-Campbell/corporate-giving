@@ -36,7 +36,7 @@ angular
 
    //Voting with Charities
    self.addVoteToCharity = function (firstVote,secondVote,thirdVote,fourthVote){
-    console.log(thirdVote)
+    console.log(firstVote)
 
     var firstVote = parseInt(firstVote);
     var secondVote = parseInt(secondVote);
@@ -95,7 +95,6 @@ angular
     })
    };
 
-   self.priceSlider = 150;
 
 
 
