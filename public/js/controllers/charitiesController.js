@@ -95,54 +95,9 @@ angular
     })
    };
 
-   // self.ui = function(){
-   //  $( ".slider0" ).slider({
-   //    range: "min",
-   //    min: 0,
-   //    max: 100,
-   //    value: 60,
-   //    slide: function( event, ui ) {
-   //            $( "#slider0" ).val( ui.value );
-   //            // self.checkCredit(ui.value);
-   //          }
-   //    });
-   //  $( ".slider1" ).slider({
-   //    range: "min",
-   //    min: 0,
-   //    max: 100,
-   //    value: 60,
-   //    slide: function( event, ui ) {
-   //            $( "#slider1" ).val( ui.value );
-   //            // self.checkCredit(ui.value);
-   //          }
-   //    });
-   //  $( ".slider2" ).slider({
-   //    range: "min",
-   //    min: 0,
-   //    max: 100,
-   //    value: 60,
-   //    slide: function( event, ui ) {
-   //            $( "#slider2" ).val( ui.value );
-   //            // self.checkCredit(ui.value);
-   //          }
-   //    });
-   //  $( ".slider3" ).slider({
-   //    range: "min",
-   //    min: 0,
-   //    max: 100,
-   //    value: 60,
-   //    slide: function( event, ui ) {
-   //            $( "#slider3" ).val( ui.value );
-   //            // self.checkCredit(ui.value);
-   //          }
-   //    });
-   //  };
+   self.priceSlider = 150;
 
-    // self.checkCredit = function(value){
-    //   var userCredit = self.user.local.credit;
-    //   var remainingCredit = (userCredit - value);
-    //   $( "#left" ).val( remainingCredit );
-    // };  
+
 
  // D3 Tings/////////////////////////////////////////////////////////////////////////////////
 
@@ -209,10 +164,6 @@ angular
       
  }
 
-
-
-   // self.ui();
-   // self.startD3();
    self.getCharities();
    self.getUser();
    self.getUsers();

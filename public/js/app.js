@@ -1,5 +1,5 @@
 angular
-  .module('corporate-giving', ['ngResource', 'angular-jwt', 'ui.router'])
+  .module('corporate-giving', ['ngResource', 'angular-jwt', 'ui.router','rzModule'])
   // .constant('API', 'https://cause-app.herokuapp.com/api')
   .constant('API', 'http://localhost:3000/api')
   .config(MainRouter)
