@@ -36,7 +36,6 @@ angular
 
    //Voting with Charities
    self.addVoteToCharity = function (firstVote,secondVote,thirdVote,fourthVote){
-    console.log(firstVote)
 
     var firstVote = parseInt(firstVote);
     var secondVote = parseInt(secondVote);
@@ -95,8 +94,33 @@ angular
     })
    };
 
-   self.slider = {
-    value: 0
+   self.slider0 = {
+    value: 0,
+    options: {
+        floor: 0,
+        ceil: 100
+    }
+   }
+   self.slider1 = {
+    value: 0,
+    options: {
+        floor: 0,
+        ceil: 100
+    }
+   }
+   self.slider2 = {
+    value: 0,
+    options: {
+        floor: 0,
+        ceil: 100
+    }
+   }
+   self.slider3 = {
+    value: 0,
+    options: {
+        floor: 0,
+        ceil: 100
+    }
    }
 
 

@@ -12,54 +12,39 @@
 
   <div class="votingPanel">
     <h1>Voting Area</h1>
-    <h1 id="left" ng-class="{red: users.user.local.credit - slider0.value - slider1.value - slider2.value - slider3.value <0}">credit left:{{users.user.local.credit - slider0.value - slider1.value - slider2.value - slider3.value}}</h1>
+    <h1 id="left" ng-class="{red: users.user.local.credit - charities.slider0.value - charities.slider1.value - charities.slider2.value - charities.slider3.value <0}">credit left:{{users.user.local.credit - charities.slider0.value - charities.slider1.value - charities.slider2.value - charities.slider3.value}}</h1>
 
-    <form role="form"  ng-submit="charities.addVoteToCharity(slider0.value, slider1.value, slider2.value, slider3.value)" novalidate class="form-group">
+    <form role="form"  ng-submit="charities.addVoteToCharity(charities.slider0.value, charities.slider1.value, charities.slider2.value, charities.slider3.value)" novalidate class="form-group">
       <h2>{{charities.all[0].name}}</h2>
-      <h1>donate:</h1><input ng-model='slider0.value'  placeholder="0"></input>
+      <h1>donate:</h1><input ng-model='charities.slider0.value' ></input>
       <div>
-          <rzslider rz-slider-model='slider0.value' 
-                    rz-slider-options="{
-                    floor: 0,
-                    ceil: 100,
-                    onStart:0
-                    }"></rzslider>
+          <rzslider rz-slider-model='charities.slider0.value' rz-slider-options="charities.slider0.options"></rzslider>
       </div>
 
       <h2>{{charities.all[1].name}}</h2>
-      <h1>donate:</h1><input ng-model='slider1.value' placeholder="0"></input>
+      <h1>donate:</h1><input ng-model='charities.slider1.value' ></input>
       <div>
-          <rzslider rz-slider-model='slider1.value' 
-                    rz-slider-options="{
-                    floor: 0, 
-                    ceil: 100
-                    }"></rzslider>
+          <rzslider rz-slider-model='charities.slider1.value' rz-slider-options="charities.slider1.options"></rzslider>
       </div>
 
       <h2>{{charities.all[2].name}}</h2>
-      <h1>donate:</h1><input ng-model='slider2.value' placeholder="0"></input>
+      <h1>donate:</h1><input ng-model='charities.slider2.value' ></input>
       <div>
-          <rzslider rz-slider-model='slider2.value' 
-                    rz-slider-options="{
-                    floor: 0,
-                    ceil: 100
-                    }"></rzslider>
+          <rzslider rz-slider-model='charities.slider2.value' rz-slider-options="charities.slider2.options"></rzslider>
       </div>
 
       <h2>{{charities.all[3].name}}</h2>
-      <h1>donate:</h1><input ng-model='slider3.value'  placeholder="0"></input>
+      <h1>donate:</h1><input ng-model='charities.slider3.value' ></input>
       <div>
-          <rzslider rz-slider-model='slider3.value' 
-                    rz-slider-options="{
-                    floor: 0,
-                    ceil: 100
-                    }"></rzslider>
+          <rzslider rz-slider-model='charities.slider3.value' rz-slider-options="charities.slider3.options"></rzslider>
       </div>
 
 
-      <button ng-if='users.user.local.credit - slider0.value - slider1.value - slider2.value - slider3.value === 0' type="submit" class="form-button">Vote</button>
-      <h1 ng-if='users.user.local.credit - slider0.value - slider1.value - slider2.value - slider3.value < 0'>Used too much credit, re-distribute your votes!</h1>
-      <h1 ng-if='users.user.local.credit - slider0.value - slider1.value - slider2.value - slider3.value > 0'>You still have {{users.user.local.credit - slider0.value - slider1.value - slider2.value - slider3.value}} credits left to distribute!</h1>
+<!--       <button ng-if='users.user.local.credit - charities.slider0.value - charities.slider1.value - charities.slider2.value - charities.slider3.value === 0' type="submit" class="form-button">Vote</button>
+      <h1 ng-if='users.user.local.credit - charities.slider0.value - charities.slider1.value - charities.slider2.value - charities.slider3.value < 0'>Used too much credit, re-distribute your votes!</h1>
+      <h1 ng-if='users.user.local.credit - charities.slider0.value - charities.slider1.value - charities.slider2.value - charities.slider3.value > 0'>You still have {{users.user.local.credit - charities.slider0.value - charities.slider1.value - charities.slider2.value - charities.slider3.value}} credits left to distribute!</h1> -->
+
+      <button type='submit'></button>
 
 
     </form>
